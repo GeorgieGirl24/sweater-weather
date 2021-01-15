@@ -1,4 +1,3 @@
-# README
 <!-- Shields -->
 ![](https://img.shields.io/badge/Rails-5.2.4-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a)
 ![](https://img.shields.io/badge/Ruby-2.5.3-orange)
@@ -9,7 +8,6 @@
 ![](https://shields.io/endpoint)
 
 # Sweater Weather
-
 
 ## Table of Contents
   - [What it does](#what-it-does)
@@ -26,7 +24,7 @@
 ## What it does
 
 
-To view the other components of the application please visit the [Github Project Organization](https://github.com/GetThatFlightOut).
+To view the other components of the application please visit the [Github Project Organization](https://github.com/sweater-weather).
 
 ## How to Install Sweater Weather
 
@@ -89,7 +87,7 @@ get calls to: localhost:3000 in your web browser
 
 ## Acknowledgments
 
-Thank you to Ian Douglas and Dione Wilson for being such amazing instructors and guiding us through this project!
+Thank you to Ian Douglas and Dione Wilson for being such amazing instructors and guiding me through this project!
 
 <!-- MARKDOWN LINKS -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
