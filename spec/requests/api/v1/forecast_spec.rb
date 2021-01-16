@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe 'Forecast Controller', :vcr do
   describe 'send forecast by location ' do
     scenario 'can get forecast details' do
-      params = {
+      forecast_params = {
         location: 'denver, co'
       }
-      get '/api/v1/forecast', params
+      get '/api/v1/forecast', params: forecast_params
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
