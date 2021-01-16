@@ -7,7 +7,7 @@ RSpec.describe 'Forecast Controller', :vcr do
         location: 'denver, co'
       }
       get '/api/v1/forecast', params: forecast_params
-      
+
       expect(response).to be_successful
       expect(response.status).to eq(200)
       expect(response.body).to be_an Array
@@ -39,10 +39,11 @@ RSpec.describe 'Forecast Controller', :vcr do
       expect(current_weather[:uvi]).to be_a Float
       expect(current_weather).to have_key(:visibility)
       expect(current_weather[:visibility]).to be_a Float
-      expect(current_weather).to have_key(:conditions)
-      expect(current_weather[:conditions]).to be_a String
-      expect(current_weather).to have_key(:icon)
-      expect(current_weather[:icon]).to be_a String
+      expect(current_weather).to have_key(:weather)
+      expect(current_weather[:weather]).to have_key(:description)
+      expect(current_weather[:weather][:description]).to be_a String
+      expect(current_weather[:weather]).to have_key(:icon)
+      expect(current_weather[:weather][:icon]).to be_a String
       expect(current_weather).to_not have_key(:clouds)
       expect(current_weather).to_not have_key(:wind_speed)
       expect(current_weather).to_not have_key(:dew_point)
