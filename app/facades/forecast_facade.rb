@@ -10,6 +10,9 @@ class ForecastFacade
     daily_weather = (weather[:daily][0..4]).map do |day|
       DailyWeather.new(day)
     end
-    binding.pry
+    hourly_weather = (weather[:hourly][0..7]).map do |hour|
+      HourlyWeather.new(hour)
+    end
+    Forecast.new(current_weather, daily_weather, hourly_weather)
   end
 end
