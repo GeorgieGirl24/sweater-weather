@@ -23,7 +23,6 @@ class CurrentWeather
   end
 
   def fahrenheit(temp)
-    binding.pry
     (temp - 273.15) * (9 / 5) + 32
   end
 end
