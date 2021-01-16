@@ -3,6 +3,7 @@ class WeatherService
     response = conn.get('/data/2.5/onecall') do |req|
       req.params['lat'] = map.latitude
       req.params['lon'] = map.longitude
+      req.params['units'] = 'imperial'
     end
     parse_data(response)
   end
