@@ -1,5 +1,5 @@
 class DailyWeather
-  attr_reader :datetime,
+  attr_reader :date,
               :sunrise,
               :sunset,
               :max_temp,
@@ -7,9 +7,9 @@ class DailyWeather
               :conditions,
               :icon
   def initialize(data)
-    @date = Time.at(data[:dt]).strftime('%Y-%m-%d')
-    @sunrise = Time.at(data[:sunrise]).strftime('%Y-%m-%d')
-    @sunset = Time.at(data[:sunset]).strftime('%Y-%m-%d')
+    @date = Time.at(data[:dt])
+    @sunrise = Time.at(data[:sunrise])
+    @sunset = Time.at(data[:sunset])
     @max_temp = data[:temp][:max]
     @min_temp = data[:temp][:min]
     @conditions = data[:weather][0][:description]
