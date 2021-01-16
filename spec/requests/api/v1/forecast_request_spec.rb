@@ -7,18 +7,19 @@ RSpec.describe 'Forecast Controller', :vcr do
         location: 'denver, co'
       }
       get '/api/v1/forecast', params: forecast_params
-binding.pry
       expect(response).to be_successful
       expect(response.status).to eq(200)
-      expect(response.body).to be_an Array
+      expect(response.body).to be_an String
       forecast = JSON.parse(response.body, symbolize_names: true)
       expect(forecast).to be_a Hash
       expect(forecast).to have_key(:data)
       expect(forecast[:data]).to be_a Hash
       expect(forecast[:data]).to have_key(:id)
       expect(forecast[:data][:id]).to be_nil
+      expect(forecast[:data]).to have_key(:type)
       expect(forecast[:data][:type]).to eq('forecast')
-      expect(forecast[:data].to have_key[:attributes])
+      # binding.pry
+      expect(forecast[:data]).to have_key(:attributes)
       expect(forecast[:data][:attributes]).to be_a Hash
 
       current_weather = forecast[:data][:attributes][:current_weather]
@@ -34,73 +35,71 @@ binding.pry
       expect(current_weather).to have_key(:feels_like) #in Fahrenheit
       expect(current_weather[:feels_like]).to be_a Float
       expect(current_weather).to have_key(:humidity)
-      expect(current_weather[:humidity]).to be_a Float
+      expect(current_weather[:humidity]).to be_a Integer
       expect(current_weather).to have_key(:uvi)
       expect(current_weather[:uvi]).to be_a Float
       expect(current_weather).to have_key(:visibility)
-      expect(current_weather[:visibility]).to be_a Float
-      expect(current_weather).to have_key(:weather)
-      expect(current_weather[:weather]).to have_key(:description)
-      expect(current_weather[:weather][:description]).to be_a String
-      expect(current_weather[:weather]).to have_key(:icon)
-      expect(current_weather[:weather][:icon]).to be_a String
+      expect(current_weather[:visibility]).to be_a Integer
+      expect(current_weather).to have_key(:conditions)
+      expect(current_weather[:conditions]).to be_a String
+      expect(current_weather).to have_key(:icon)
+      expect(current_weather[:icon]).to be_a String
       expect(current_weather).to_not have_key(:clouds)
       expect(current_weather).to_not have_key(:wind_speed)
       expect(current_weather).to_not have_key(:dew_point)
       expect(current_weather).to_not have_key(:dt)
-      expect(current_weather[:datetime]).to eq()
-      expect(current_weather[:temperature]).to eq()
-      expect(current_weather[:feels_like]).to eq()
-      expect(current_weather[:icon]).to eq()
+      expect(current_weather[:datetime]).to eq("2021-01-16")
+      expect(current_weather[:temperature]).to eq(45.63)
+      expect(current_weather[:feels_like]).to eq(38.52)
+      expect(current_weather[:icon]).to eq("01d")
 
       daily_weather = forecast[:data][:attributes][:daily_weather]
       expect(daily_weather).to be_a Array
       expect(daily_weather.count).to eq(5)
-      expect(daily_weather.first).to have_key(:dt)
-      expect(daily_weather.first[:dt]).to be_a String
+      expect(daily_weather.first).to have_key(:date)
+      expect(daily_weather.first[:date]).to be_a String
       expect(daily_weather.first).to have_key(:sunrise)
       expect(daily_weather.first[:sunrise]).to be_a String
       expect(daily_weather.first).to have_key(:sunset)
       expect(daily_weather.first[:sunset]).to be_a String
-      expect(daily_weather.first).to have_key(:temp)
-      expect(daily_weather.first[:temp_f]).to be_a Hash #in Fahrenheit
-      expect(daily_weather.first[:temp]).to have_key(:max_f)
-      expect(daily_weather.first[:temp][:max_f]).to be_a Float #in Fahrenheit
-      expect(daily_weather.first[:temp]).to have_key(:min_f)
-      expect(daily_weather.first[:temp][:min_f]).to be_a Float #in Fahrenheit
-      expect(daily_weather.first[:weather]).to be_a Array
-      expect(daily_weather.first[:weather][0]).to have_key(:description)
-      expect(daily_weather.first[:weather][0][:description]).to be_a String
-      expect(daily_weather.first[:weather][0]).to have_key(:icon)
-      expect(daily_weather.first[:weather][0][:icon]).to be_a String
-      expect(daily_weather).to_not have_key(:dew_point)
-      expect(daily_weather).to_not have_key(:pop)
-      expect(daily_weather).to_not have_key(:uvi)
-      expect(daily_weather.first[:datetime]).to eq()
-      expect(daily_weather.first[:temp]).to eq()
-      expect(daily_weather.first[:weather][:description]).to eq()
-      expect(daily_weather.first[:icon]).to eq()
+      expect(daily_weather.first).to have_key(:max_temp)
+      expect(daily_weather.first[:max_temp]).to be_a Float #in Fahrenheit
+      expect(daily_weather.first).to have_key(:min_temp)
+      expect(daily_weather.first[:min_temp]).to be_a Float #in Fahrenheit
+      expect(daily_weather.first).to have_key(:conditions)
+      expect(daily_weather.first[:conditions]).to be_a String
+      expect(daily_weather.first).to have_key(:icon)
+      expect(daily_weather.first[:icon]).to be_a String
+      expect(daily_weather.first).to_not have_key(:dew_point)
+      expect(daily_weather.first).to_not have_key(:pop)
+      expect(daily_weather.first).to_not have_key(:uvi)
+      expect(daily_weather.first[:date]).to eq("2021-01-16")
+      expect(daily_weather.first[:conditions]).to eq("clear sky")
+      expect(daily_weather.first[:icon]).to eq("01d")
 
       hourly_weather = forecast[:data][:attributes][:hourly_weather]
-      expect(hourly_weather.first).to be_a Array
-      expect(hourly_weather.first).to eq(8)
+      expect(hourly_weather).to be_a Array
+      expect(hourly_weather.length).to eq(8)
       expect(hourly_weather.first).to have_key(:time)
-      expect(hourly_weather.first[:time]).to be_a Integer #convert to readable '14:00:00'
-      expect(hourly_weather.first).to have_key(:temp)
-      expect(hourly_weather.first[:temp]).to be_a String #in Fahrenheit
+      expect(hourly_weather.first[:time]).to be_a String #convert to readable '14:00:00'
+      expect(hourly_weather.first).to have_key(:temperature)
+      expect(hourly_weather.first[:temperature]).to be_a Float #in Fahrenheit
       expect(hourly_weather.first).to have_key(:wind_speed)
       expect(hourly_weather.first[:wind_speed]).to be_a String #mph
-      expect(hourly_weather.first).to have_key(:wind_deg)
-      expect(hourly_weather.first[:wind_deg]).to be_a String #convert to numeric value
-      expect(hourly_weather.first[:weather]).to be_an Array
-      expect(hourly_weather.first[:weather]).to have_key(:description)
-      expect(hourly_weather.first[:weather][:description]).to be_a String
-      expect(hourly_weather.first[:weather]).to have_key(:icon)
-      expect(hourly_weather.first[:weather][:icon]).to be_a String
-      expect(daily_weather.first[:wind_speed]).to eq()
-      expect(daily_weather.first[:temp]).to eq()
-      expect(daily_weather.first[:weather][:description]).to eq()
-      expect(daily_weather.first[:icon]).to eq()
+      expect(hourly_weather.first).to have_key(:wind_direction)
+      expect(hourly_weather.first[:wind_direction]).to be_a String #convert to numeric value
+      expect(hourly_weather.first).to have_key(:conditions)
+      expect(hourly_weather.first[:conditions]).to be_a String
+      expect(hourly_weather.first).to have_key(:icon)
+      expect(hourly_weather.first[:icon]).to be_a String
+      expect(hourly_weather.first).to_not have_key(:dew_point)
+      expect(hourly_weather.first).to_not have_key(:visibility)
+      expect(hourly_weather.first).to_not have_key(:feels_like)
+      expect(hourly_weather.first).to_not have_key(:clouds)
+      expect(hourly_weather.first[:wind_speed]).to eq("3.44 mph")
+      expect(hourly_weather.first[:temperature]).to eq(45.63)
+      expect(hourly_weather.first[:conditions]).to eq("clear sky")
+      expect(hourly_weather.first[:icon]).to eq("01d")
     end
   end
 end
