@@ -21,9 +21,4 @@ class CurrentWeather
     @conditions = data[:weather][0][:description]
     @icon = data[:weather][0][:icon]
   end
-
-  def fahrenheit(temp)
-    (temp - 273.15) * (9 / 5) + 32
-    # unit = imperical is not being utilized?
-  end
 end
