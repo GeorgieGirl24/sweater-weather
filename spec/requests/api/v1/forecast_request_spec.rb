@@ -56,8 +56,8 @@ RSpec.describe 'Forecast Controller', :vcr do
       daily_weather = forecast[:data][:attributes][:daily_weather]
       expect(daily_weather).to be_a Array
       expect(daily_weather.count).to eq(5)
-      expect(daily_weather.first).to have_key(:date)
-      expect(daily_weather.first[:date]).to be_a String
+      expect(daily_weather.first).to have_key(:dt)
+      expect(daily_weather.first[:dt]).to be_a String
       expect(daily_weather.first).to have_key(:sunrise)
       expect(daily_weather.first[:sunrise]).to be_a String
       expect(daily_weather.first).to have_key(:sunset)
@@ -69,11 +69,11 @@ RSpec.describe 'Forecast Controller', :vcr do
       expect(daily_weather.first[:temp]).to have_key(:min)
       expect(daily_weather.first[:temp][:min]).to be_a Float #in Fahrenheit
       expect(daily_weather.first[:weather]).to be_a Array
-      expect(daily_weather.first[:weather]).to have_key(:description)
-      expect(daily_weather.first[:weather][:description]).to be_a String
-      expect(daily_weather.first[:weather]).to have_key(:icon)
-      expect(daily_weather.first[:weather][:icon]).to be_a String
-      expect(daily_weather).to_not have_key(:dt)
+      expect(daily_weather.first[:weather][0]).to have_key(:description)
+      expect(daily_weather.first[:weather][0][:description]).to be_a String
+      expect(daily_weather.first[:weather][0]).to have_key(:icon)
+      expect(daily_weather.first[:weather][0][:icon]).to be_a String
+      expect(daily_weather).to_not have_key(:dew_point)
       expect(daily_weather).to_not have_key(:pop)
       expect(daily_weather).to_not have_key(:uvi)
       expect(daily_weather.first[:datetime]).to eq()
