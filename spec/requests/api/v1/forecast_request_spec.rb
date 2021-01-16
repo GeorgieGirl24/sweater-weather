@@ -48,7 +48,7 @@ RSpec.describe 'Forecast Controller', :vcr do
       expect(current_weather).to_not have_key(:wind_speed)
       expect(current_weather).to_not have_key(:dew_point)
       expect(current_weather).to_not have_key(:dt)
-      expect(current_weather[:datetime]).to eq("2021-01-16")
+      expect(current_weather[:datetime]).to eq("2021-01-16T12:43:10.000-07:00")
       expect(current_weather[:temperature]).to eq(45.63)
       expect(current_weather[:feels_like]).to eq(38.52)
       expect(current_weather[:icon]).to eq("01d")
@@ -100,6 +100,7 @@ RSpec.describe 'Forecast Controller', :vcr do
       expect(hourly_weather.first[:temperature]).to eq(45.63)
       expect(hourly_weather.first[:conditions]).to eq("clear sky")
       expect(hourly_weather.first[:icon]).to eq("01d")
+      binding.pry
     end
   end
 end
