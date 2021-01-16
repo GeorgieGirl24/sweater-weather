@@ -51,6 +51,7 @@ group :test do
   gem 'simplecov'
   gem 'vcr'
   gem 'webmock'
+  gem 'nyan-cat-formatter'
   gem 'shoulda-matchers', '~> 4.0'
 end
 
