@@ -7,7 +7,7 @@ RSpec.describe 'Forecast Controller', :vcr do
         location: 'denver, co'
       }
       get '/api/v1/forecast', params: forecast_params
-
+binding.pry
       expect(response).to be_successful
       expect(response.status).to eq(200)
       expect(response.body).to be_an Array
@@ -63,11 +63,11 @@ RSpec.describe 'Forecast Controller', :vcr do
       expect(daily_weather.first).to have_key(:sunset)
       expect(daily_weather.first[:sunset]).to be_a String
       expect(daily_weather.first).to have_key(:temp)
-      expect(daily_weather.first[:temp]).to be_a Hash #in Fahrenheit
-      expect(daily_weather.first[:temp]).to have_key(:max)
-      expect(daily_weather.first[:temp][:max]).to be_a Float #in Fahrenheit
-      expect(daily_weather.first[:temp]).to have_key(:min)
-      expect(daily_weather.first[:temp][:min]).to be_a Float #in Fahrenheit
+      expect(daily_weather.first[:temp_f]).to be_a Hash #in Fahrenheit
+      expect(daily_weather.first[:temp]).to have_key(:max_f)
+      expect(daily_weather.first[:temp][:max_f]).to be_a Float #in Fahrenheit
+      expect(daily_weather.first[:temp]).to have_key(:min_f)
+      expect(daily_weather.first[:temp][:min_f]).to be_a Float #in Fahrenheit
       expect(daily_weather.first[:weather]).to be_a Array
       expect(daily_weather.first[:weather][0]).to have_key(:description)
       expect(daily_weather.first[:weather][0][:description]).to be_a String
