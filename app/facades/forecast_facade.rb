@@ -6,8 +6,10 @@ class ForecastFacade
 
   def self.get_weather(map)
     weather = WeatherService.get_weather(map)
-    # binding.pry
     current_weather = CurrentWeather.new(weather[:current])
-    daily_weather = DailyWeather.new(weather[:daily][0..4])
+    daily_weather = (weather[:daily][0..4]).map do |day|
+      DailyWeather.new(day)
+    end
+    binding.pry
   end
 end
