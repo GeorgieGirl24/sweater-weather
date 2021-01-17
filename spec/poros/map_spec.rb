@@ -23,7 +23,7 @@ RSpec.describe Map, :vcr do
     location = ''
     coordinates = MapService.get_coordinates(location)
     map = Map.new(coordinates)
-    
+
     expect(map).to be_a Map
     expect(map.id).to eq(nil)
     expect(map.status_code).to be_an Integer
