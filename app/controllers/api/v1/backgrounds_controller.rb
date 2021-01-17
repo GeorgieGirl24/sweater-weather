@@ -1,7 +1,7 @@
 class Api::V1::BackgroundsController < ApplicationController
   def index
     image = ImageFacade.get_image(location_params)
-    binding.pry
+    render json: ImageSerializer.new(image)
   end
 
   private
