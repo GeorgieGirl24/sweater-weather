@@ -6,7 +6,7 @@ RSpec.describe WeatherService, :vcr do
     map = MapFacade.get_coordinates(location)
 
     forecast = WeatherService.get_weather(map)
-# binding.pry
+
     expect(forecast).to be_a Hash
     expect(forecast).to have_key(:lat)
     expect(forecast[:lat]).to eq(map.latitude.round(4))
