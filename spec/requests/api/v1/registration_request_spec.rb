@@ -44,5 +44,85 @@ RSpec.describe 'User API', :vcr do
       expect(user.api_key).to be_a String
       expect(user.api_key).to eq(user_response[:data][:attributes][:api_key])
     end
+
+    it 'can not add a new User with a missing field' do
+      user_params = {
+        'email': '',
+        'password': 'password',
+        'password_confirmation': 'password'
+      }
+
+      headers = {
+        'CONTENT_TYPE': 'application/json',
+        'ACCEPT': 'application/json'
+      }
+
+      post '/api/v1/users', headers: headers, params: JSON.generate(user_params)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+      expect(response.content_type).to eq('text/plain')
+
+      expect(response.body).to be_a String
+      # expect(errors).to eq("Email (can't be blank)")
+    end
+
+    it 'can not add a new User when passwords do not match' do
+      user_params = {
+        'email': 'example@email.com',
+        'password': 'nomatchingpassword',
+        'password_confirmation': 'password'
+      }
+
+      headers = {
+        'CONTENT_TYPE': 'application/json',
+        'ACCEPT': 'application/json'
+      }
+
+      post '/api/v1/users', headers: headers, params: JSON.generate(user_params)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+      expect(response.content_type).to eq('text/plain')
+
+      expect(response.body).to be_a String
+    end
+
+    it 'cannot add a new User if the email is in use' do
+      user_params = {
+        'email': 'example@email.com',
+        'password': 'password',
+        'password_confirmation': 'password'
+      }
+
+      headers = {
+        'CONTENT_TYPE': 'application/json',
+        'ACCEPT': 'application/json'
+      }
+
+      post '/api/v1/users', headers: headers, params: JSON.generate(user_params)
+
+      expect(response).to be_successful
+      expect(response.status).to eq(201)
+      expect(response.content_type).to eq('application/json')
+
+      user_2_params = {
+        'email': 'example@email.com',
+        'password': 'password',
+        'password_confirmation': 'password'
+      }
+      eaders = {
+        'CONTENT_TYPE': 'application/json',
+        'ACCEPT': 'application/json'
+      }
+
+      post '/api/v1/users', headers: headers, params: JSON.generate(user_2_params)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+      expect(response.content_type).to eq('text/plain')
+
+      expect(response.body).to be_a String
+    end
   end
 end
