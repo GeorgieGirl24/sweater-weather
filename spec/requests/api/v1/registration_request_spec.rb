@@ -60,11 +60,12 @@ RSpec.describe 'User API', :vcr do
       post '/api/v1/users', headers: headers, params: JSON.generate(user_params)
 
       expect(response).to_not be_successful
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(404)
       expect(response.content_type).to eq('text/plain')
 
       expect(response.body).to be_a String
-      # expect(errors).to eq("Email (can't be blank)")
+      expect(response.body).to eq("[:email, [\"can't be blank\"]]")
+      # this gets formatted so it looks nicer as an error
     end
 
     it 'can not add a new User when passwords do not match' do
@@ -82,10 +83,11 @@ RSpec.describe 'User API', :vcr do
       post '/api/v1/users', headers: headers, params: JSON.generate(user_params)
 
       expect(response).to_not be_successful
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(404)
       expect(response.content_type).to eq('text/plain')
 
       expect(response.body).to be_a String
+      expect(response.body).to eq("[:password_confirmation, [\"doesn't match Password\", \"doesn't match Password\"]]")
     end
 
     it 'cannot add a new User if the email is in use' do
@@ -111,7 +113,8 @@ RSpec.describe 'User API', :vcr do
         'password': 'password',
         'password_confirmation': 'password'
       }
-      eaders = {
+
+      headers = {
         'CONTENT_TYPE': 'application/json',
         'ACCEPT': 'application/json'
       }
@@ -119,10 +122,11 @@ RSpec.describe 'User API', :vcr do
       post '/api/v1/users', headers: headers, params: JSON.generate(user_2_params)
 
       expect(response).to_not be_successful
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(404)
       expect(response.content_type).to eq('text/plain')
 
       expect(response.body).to be_a String
+      expect(response.body).to eq("[:email, [\"has already been taken\"]]")
     end
   end
 end
