@@ -24,11 +24,11 @@ RSpec.describe 'User API', :vcr do
       expect(user_response).to be_a Hash
       expect(user_response).to have_key(:data)
       expect(user_response[:data]).to be_a Hash
-      expect(user_response).to have_key(:type)
-      expect(user_response[:type]).to be_a String
-      expect(user_response[:type]).to eq('users')
-      expect(user_response).to have_key(:id)
-      expect(user_response[:id]).to be_a String
+      expect(user_response[:data]).to have_key(:type)
+      expect(user_response[:data][:type]).to be_a String
+      expect(user_response[:data][:type]).to eq('users')
+      expect(user_response[:data]).to have_key(:id)
+      expect(user_response[:data][:id]).to be_a String
       expect(user_response[:data]).to have_key(:attributes)
       expect(user_response[:data][:attributes]).to be_a Hash
       expect(user_response[:data][:attributes]).to have_key(:email)
