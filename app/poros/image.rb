@@ -8,7 +8,6 @@ class Image
     @image = {
       image_url: image_data[:urls][:regular],
       link: image_data[:links][:html],
-      description: image_data[:description],
       location: location,
       source: 'unsplash.com'
     }
