@@ -13,20 +13,39 @@ RSpec.describe 'Image API', :vcr do
       expect(response.status).to eq(200)
       expect(response.content_type).to eq('application/json')
 
-      image = JSON.parse(response.body, symbolize_names: true)
+      image = JSON.parse(response.body, symbolize_names: true)[:data]
       expect(image).to be_a Hash
-      expect(image).to have_key(:results)
-      expect(image[:results]).to be_an Array
-      expect(image[:results].first).to be_a Hash
-      expect(image[:results].first).to have_key(:description)
-      expect(image[:results].first).to have_key(:urls)
-      expect(image[:results].first[:urls]).to have_key(:regular)
-      expect(image[:results].first).to have_key(:links)
-      expect(image[:results].first[:links]).to have_key(:html)
-      expect(image[:results].first).to have_key(:user)
-      expect(image[:results].first[:user]).to have_key(:name)
-      expect(image[:results].first[:user]).to have_key(:links)
-      expect(image[:results].first[:user][:links]).to have_key(:html)
+      expect(image).to have_key(:id)
+      expect(image[:id]).to be_nil
+      expect(image).to have_key(:type)
+      expect(image[:type]).to eq('image')
+      expect(image).to have_key(:attributes)
+      expect(image[:attributes]).to be_a Hash
+      expect(image[:attributes]).to have_key(:credit)
+      expect(image[:attributes][:credit]).to be_an Hash
+      expect(image[:attributes][:credit]).to have_key(:artist)
+      expect(image[:attributes][:credit][:artist]).to be_a String
+      expect(image[:attributes][:credit]).to have_key(:artist_link)
+      expect(image[:attributes][:credit][:artist_link]).to be_a String
+      expect(image[:attributes]).to have_key(:image)
+      expect(image[:attributes][:image]).to be_an Hash
+      expect(image[:attributes][:image]).to have_key(:image_url)
+      expect(image[:attributes][:image][:image_url]).to be_a String
+      expect(image[:attributes][:image]).to have_key(:link)
+      expect(image[:attributes][:image][:link]).to be_a String
+      expect(image[:attributes][:image]).to have_key(:description)
+      expect(image[:attributes][:image][:description]).to be_a String
+      expect(image[:attributes][:image]).to have_key(:location)
+      expect(image[:attributes][:image][:location]).to be_a String
+      expect(image[:attributes][:image]).to have_key(:source)
+      expect(image[:attributes][:image][:source]).to be_a String
+      expect(image[:attributes]).to_not be_an Array
+      expect(image[:attributes][:image]).to_not be_an Array
+      expect(image[:attributes][:image][:location]).to eq('denver, co')
+      expect(image[:attributes][:image][:source]).to eq('unsplash.com')
+      expected = 'Walking the streets of downtown Denver on a foggy, freezing cold day.'
+      expect(image[:attributes][:image][:description]).to eq(expected)
+      expect(image[:attributes][:credit][:artist]).to eq('Owen Lystrup')
     end
   end
 end
