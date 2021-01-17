@@ -9,7 +9,7 @@ class ImageService
   def self.parse_data(response)
     JSON.parse(response.body, symbolize_names: true)
   end
-  
+
   private
   def self.conn
     Faraday.new(ENV['IMAGE_API_HOST']) do |f|
