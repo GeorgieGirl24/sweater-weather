@@ -3,9 +3,13 @@ class MapService
     response = conn.get('/geocoding/v1/address') do |req|
       req.params['location'] = location
     end
-    JSON.parse(response.body, symbolize_names: true)
+    parse_data(response)
   end
 
+  def self.parse_data(response)
+    JSON.parse(response.body, symbolize_names: true)
+  end
+  
   private
   def self.conn
     Faraday.new(ENV['MAP_API_HOST']) do |f|
