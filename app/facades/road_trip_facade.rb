@@ -21,7 +21,7 @@ class RoadTripFacade
       eta_weather_time.strftime('%H:%M:%S') == hourly.time
     end.first
     # binding.pry
-    RoadTrip.new(trip, origin, destination, weather_time)
+    Roadtrip.new(trip, origin, destination, weather_time)
   end
 
   def self.get_forecast_weather(destination)
