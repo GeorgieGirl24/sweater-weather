@@ -18,7 +18,6 @@ RSpec.describe 'Forecast Controller', :vcr do
       expect(forecast[:data][:id]).to be_nil
       expect(forecast[:data]).to have_key(:type)
       expect(forecast[:data][:type]).to eq('forecast')
-      # binding.pry
       expect(forecast[:data]).to have_key(:attributes)
       expect(forecast[:data][:attributes]).to be_a Hash
 
