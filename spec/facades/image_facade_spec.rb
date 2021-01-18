@@ -6,7 +6,6 @@ RSpec.describe 'Image Facade', :vcr do
 
     image = ImageFacade.get_image(location)
     expect(image).to be_an Image
-    expect(image.id).to be_nil
     expect(image.image).to be_a Hash
     expect(image.image).to have_key(:image_url)
     expect(image.image[:image_url]).to be_a String
