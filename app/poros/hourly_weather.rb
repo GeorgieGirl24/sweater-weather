@@ -6,7 +6,7 @@ class HourlyWeather
               :conditions,
               :icon
   def initialize(data)
-    @time = Time.at(data[:dt]).strftime('%Y-%m-%d')
+    @time = Time.at(data[:dt]).strftime('%H:%M:%S')
     @temperature = data[:temp]
     @wind_speed = "#{data[:wind_speed]} mph"
     @wind_direction = "from #{find_wind_direction(data[:wind_deg])}"

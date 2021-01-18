@@ -15,4 +15,16 @@ class ForecastFacade
     end
     Forecast.new(current_weather, daily_weather, hourly_weather)
   end
+
+  def self.get_forecast_weather(destination)
+    map = MapFacade.get_coordinates(destination)
+    self.get_destination_weather(map)
+  end
+
+  def self.get_destination_weather(map)
+    weather = WeatherService.get_weather(map) #refactor this
+    hourly_weather = (weather[:hourly]).map do |hour|
+      HourlyWeather.new(hour)
+    end
+  end
 end

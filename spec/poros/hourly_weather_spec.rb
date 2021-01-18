@@ -14,7 +14,7 @@ RSpec.describe HourlyWeather, :vcr do
     expect(@many_hours_weather).to be_an Array
     hour_weather = @many_hours_weather.first
     expect(hour_weather).to be_a HourlyWeather
-    expect(hour_weather.time).to eq('2021-01-16')
+    expect(hour_weather.time).to eq('14:00:00')
     expect(hour_weather.time).to_not eq(1610830800) #unformatted
     expect(hour_weather.temperature).to eq(46.27)
     expect(hour_weather.temperature).to_not eq(245.76) #Kelvin

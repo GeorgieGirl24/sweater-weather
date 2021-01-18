@@ -15,7 +15,6 @@ RSpec.describe Forecast, :vcr do
     the_forecast = Forecast.new(current_weather,daily_weather,hourly_weather)
 
     expect(the_forecast).to be_a Forecast
-    expect(the_forecast.id).to eq(nil)
     expect(the_forecast.current_weather).to be_a CurrentWeather
     expect(the_forecast.current_weather).to_not be_an Array
     expect(the_forecast.daily_weather).to be_an Array
