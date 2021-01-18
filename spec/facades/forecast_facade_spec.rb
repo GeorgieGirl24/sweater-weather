@@ -6,7 +6,6 @@ RSpec.describe ForecastFacade, :vcr do
     map = MapFacade.get_coordinates(location)
     forecast = ForecastFacade.get_weather(map)
     expect(forecast).to be_a Forecast
-    expect(forecast.id).to be_nil
     expect(forecast.current_weather).to be_a CurrentWeather
     expect(forecast.current_weather.temperature).to be_a Float
     expect(forecast.current_weather.conditions).to be_a String
