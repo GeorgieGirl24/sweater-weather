@@ -31,7 +31,7 @@ To view the other components of the application please visit the [Github Project
 For usage on your local machine follow the instructions listed below:
 
 ```
-git clone git@github.com:
+git clone git@github.com:GeorgieGirl24/sweater-weather.git
 cd 
 bundle install
 rake db:{create,migrate}
