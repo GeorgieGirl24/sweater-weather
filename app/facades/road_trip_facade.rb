@@ -3,9 +3,14 @@ class RoadTripFacade
     origin = road_trip_params[:origin]
     destination = road_trip_params[:destination]
     trip = MapFacade.get_trip(origin, destination) #this gives time and distance
-    destination_weather = self.get_forecast_weather(destination) #array of 48 HourlyWeather Objects
-    weather_time = self.get_eta_weather_time(trip, destination_weather)
-    Roadtrip.new(trip, origin, destination, weather_time)
+    if trip[:info][:statuscode] != 402
+      destination_weather = self.get_forecast_weather(destination) #array of 48 HourlyWeather Objects
+      weather_time = self.get_eta_weather_time(trip, destination_weather)
+      Roadtrip.new(trip, origin, destination, weather_time)
+    else
+      weather_time = nil
+      Roadtrip.new(trip, origin, destination, weather_time)
+    end
   end
 
   def self.get_forecast_weather(destination)
