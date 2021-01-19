@@ -16,4 +16,70 @@ RSpec.describe ForecastFacade, :vcr do
     expect(forecast.hourly_weather.count).to eq(8)
     expect(forecast.hourly_weather.first).to be_a HourlyWeather
   end
+
+  it 'can return a HourlyWeather' do
+    destination = 'Pueblo, CO'
+    map = MapFacade.get_coordinates(destination)
+    destination_weather = ForecastFacade.get_destination_weather(map)
+
+    expect(destination_weather).to be_a Array
+    expect(destination_weather.first).to be_a HourlyWeather
+    expect(destination_weather.first.conditions).to be_a String
+    expect(destination_weather.first.icon).to be_a String
+    expect(destination_weather.first.temperature).to be_a Float
+    expect(destination_weather.first.time).to be_a String
+    expect(destination_weather.first.wind_direction).to be_a String
+    expect(destination_weather.first.wind_speed).to be_a String
+  end
+
+  it 'can call weather for multiple service calls' do
+    destination = 'Pueblo, CO'
+    map = MapFacade.get_coordinates(destination)
+    weather = WeatherService.get_weather(map)
+
+    expect(weather).to be_a Hash
+    expect(weather).to have_key(:lat)
+    expect(weather[:lat]).to be_a Float
+    expect(weather).to have_key(:lon)
+    expect(weather[:lon]).to be_a Float
+    expect(weather).to have_key(:current)
+    expect(weather[:current]).to be_a Hash
+    expect(weather).to have_key(:hourly)
+    expect(weather[:hourly]).to be_a Array
+    expect(weather).to have_key(:daily)
+    expect(weather[:daily]).to be_a Array
+  end
+
+  it 'can get many HourlyWeather objects' do
+    destination = 'Pueblo, CO'
+    map = MapFacade.get_coordinates(destination)
+    weather = WeatherService.get_weather(map)
+
+    many_hourly_weather = ForecastFacade.get_many_hourly_weather(weather)
+
+    expect(many_hourly_weather).to be_an Array
+    expect(many_hourly_weather.count).to eq(48)
+    expect(many_hourly_weather.first).to be_an HourlyWeather
+    expect(many_hourly_weather.first.conditions).to be_a String
+    expect(many_hourly_weather.first.icon).to be_a String
+    expect(many_hourly_weather.first.temperature).to be_a Float
+    expect(many_hourly_weather.first.wind_direction).to be_a String
+    expect(many_hourly_weather.first.wind_speed).to be_a String
+  end
+
+  it 'can get eight HourlyWeather objects' do
+    destination = 'Pueblo, CO'
+    map = MapFacade.get_coordinates(destination)
+    weather = WeatherService.get_weather(map)
+
+    hourly_weather = ForecastFacade.hourly_weather(weather)
+    expect(hourly_weather).to be_an Array
+    expect(hourly_weather.count).to eq(8)
+    expect(hourly_weather.first).to be_an HourlyWeather
+    expect(hourly_weather.first.conditions).to be_a String
+    expect(hourly_weather.first.icon).to be_a String
+    expect(hourly_weather.first.temperature).to be_a Float
+    expect(hourly_weather.first.wind_direction).to be_a String
+    expect(hourly_weather.first.wind_speed).to be_a String
+  end
 end
