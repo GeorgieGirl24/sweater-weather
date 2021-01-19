@@ -18,7 +18,7 @@ RSpec.describe Roadtrip, :vcr do
     expect(roadtrip.weather_at_eta).to be_a Hash
     expect(roadtrip.weather_at_eta).to have_key(:temperature)
     expect(roadtrip.weather_at_eta[:temperature]).to be_a Float
-    expect(roadtrip.weather_at_eta[:temperature]).to eq(61.54)
+    expect(roadtrip.weather_at_eta[:temperature]).to eq(55.24)
     expect(roadtrip.weather_at_eta).to have_key(:conditions)
     expect(roadtrip.weather_at_eta[:conditions]).to be_a String
     expect(roadtrip.weather_at_eta[:conditions]).to eq('clear sky')
@@ -41,7 +41,7 @@ RSpec.describe Roadtrip, :vcr do
     expect(roadtrip.weather_at_eta).to be_a Hash
     expect(roadtrip.weather_at_eta).to have_key(:temperature)
     expect(roadtrip.weather_at_eta[:temperature]).to be_a Float
-    expect(roadtrip.weather_at_eta[:temperature]).to eq(28.13)
+    expect(roadtrip.weather_at_eta[:temperature]).to eq(27.5)
     expect(roadtrip.weather_at_eta).to have_key(:conditions)
     expect(roadtrip.weather_at_eta[:conditions]).to be_a String
     expect(roadtrip.weather_at_eta[:conditions]).to eq('overcast clouds')
@@ -64,10 +64,10 @@ RSpec.describe Roadtrip, :vcr do
     expect(roadtrip.weather_at_eta).to be_a Hash
     expect(roadtrip.weather_at_eta).to have_key(:temperature)
     expect(roadtrip.weather_at_eta[:temperature]).to be_a Float
-    expect(roadtrip.weather_at_eta[:temperature]).to eq(70.83)
+    expect(roadtrip.weather_at_eta[:temperature]).to eq(68.31)
     expect(roadtrip.weather_at_eta).to have_key(:conditions)
     expect(roadtrip.weather_at_eta[:conditions]).to be_a String
-    expect(roadtrip.weather_at_eta[:conditions]).to eq('light rain')
+    expect(roadtrip.weather_at_eta[:conditions]).to eq('broken clouds')
   end
 
   it 'cannot plan a trip across the ocean' do
@@ -105,10 +105,10 @@ RSpec.describe Roadtrip, :vcr do
     expect(roadtrip.weather_at_eta).to be_a Hash
     expect(roadtrip.weather_at_eta).to have_key(:temperature)
     expect(roadtrip.weather_at_eta[:temperature]).to be_a Float
-    expect(roadtrip.weather_at_eta[:temperature]).to eq(17.94)
+    expect(roadtrip.weather_at_eta[:temperature]).to eq(16.48)
     expect(roadtrip.weather_at_eta).to have_key(:conditions)
     expect(roadtrip.weather_at_eta[:conditions]).to be_a String
-    expect(roadtrip.weather_at_eta[:conditions]).to eq('overcast clouds')
+    expect(roadtrip.weather_at_eta[:conditions]).to eq('light snow')
   end
 
   it 'cannot plan a trip across the ocean to Sweden' do
