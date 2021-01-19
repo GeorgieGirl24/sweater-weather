@@ -19,6 +19,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-    params.permit(:email, :password, :password_confirmation)
+    JSON.parse(request.raw_post)
   end
 end
