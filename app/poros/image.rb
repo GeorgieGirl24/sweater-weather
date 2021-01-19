@@ -6,10 +6,9 @@ class Image
     @image = {
       image_url: image_data[:urls][:regular],
       link: image_data[:links][:html],
-      location: location,
-      source: 'unsplash.com'
     }
     @credit = {
+      source: 'https://unsplash.com/',
       artist: image_data[:user][:name],
       artist_link: image_data[:user][:links][:html]
     }
