@@ -82,4 +82,23 @@ RSpec.describe ForecastFacade, :vcr do
     expect(hourly_weather.first.wind_direction).to be_a String
     expect(hourly_weather.first.wind_speed).to be_a String
   end
+
+  it 'can get DailyWeather objects' do
+    destination = 'Pueblo, CO'
+    map = MapFacade.get_coordinates(destination)
+    weather = WeatherService.get_weather(map)
+
+    daily_weather = ForecastFacade.daily_weather(weather)
+
+    expect(daily_weather).to be_an Array
+    expect(daily_weather.count).to eq(5)
+    expect(daily_weather.first).to be_an DailyWeather
+    expect(daily_weather.first.conditions).to be_a String
+    expect(daily_weather.first.icon).to be_a String
+    expect(daily_weather.first.date).to be_a Time
+    expect(daily_weather.first.max_temp).to be_a Float
+    expect(daily_weather.first.min_temp).to be_a Float
+    expect(daily_weather.first.sunrise).to be_a Time
+    expect(daily_weather.first.sunset).to be_a Time
+  end
 end
