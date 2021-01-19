@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe 'MunchiesFacade', :vcr do
   it 'can get Munchies as a return object after calling a MunchiesService' do
     munchies_params = {
-      start: 'Denver',
-      end: 'Pueblo',
+      origin: 'Denver',
+      destination: 'Pueblo',
       food: 'chinese'
     }
 
-    restaurants = MunchiesService.get_restaurants(munchies_params[:end], munchies_params[:term])
+    restaurants = MunchiesService.get_restaurants(munchies_params[:destination], munchies_params[:term])
 
     expect(restaurants).to be_a Hash
     expect(restaurants).to have_key(:businesses)
@@ -41,13 +41,13 @@ RSpec.describe 'MunchiesFacade', :vcr do
 
   it 'can return a trip from MapApi' do
     munchies_params = {
-      start: 'Denver',
-      end: 'Pueblo',
+      origin: 'Denver',
+      destination: 'Pueblo',
       food: 'chinese'
     }
 
-    origin = munchies_params[:start]
-    destination = munchies_params[:end]
+    origin = munchies_params[:origin]
+    destination = munchies_params[:destination]
     trip = MapFacade.get_trip(origin, destination)
 
     expect(trip).to be_a Hash
@@ -77,7 +77,58 @@ RSpec.describe 'MunchiesFacade', :vcr do
     expect(trip[:route][:formattedTime]).to be_a String
   end
 
-  it 'can get hourly weather for destination' do
-    
+  it 'can get Roadtrip PORO with weather and destination' do
+    munchies_params = {
+      origin: 'Denver',
+      destination: 'Pueblo',
+      food: 'chinese'
+    }
+
+    roadtrip = RoadTripFacade.get_trip(munchies_params)
+    expect(roadtrip).to be_a Roadtrip
+    expect(roadtrip.end_city).to be_a String
+    expect(roadtrip.end_city).to eq('Pueblo')
+    expect(roadtrip.start_city).to be_a String
+    expect(roadtrip.start_city).to eq('Denver')
+    expect(roadtrip.travel_time).to be_a String
+    expect(roadtrip.travel_time).to eq('01:44:22')
+    expect(roadtrip.weather_at_eta).to be_a Hash
+    expect(roadtrip.weather_at_eta).to have_key(:temperature)
+    expect(roadtrip.weather_at_eta[:temperature]).to be_a Float
+    expect(roadtrip.weather_at_eta[:temperature]).to eq(32.9)
+    expect(roadtrip.weather_at_eta).to have_key(:conditions)
+    expect(roadtrip.weather_at_eta[:conditions]).to be_a String
+    expect(roadtrip.weather_at_eta[:conditions]).to eq('scattered clouds')
+
+  end
+
+  it 'can make a Munchies PORO' do
+    munchies_params = {
+      origin: 'Denver',
+      destination: 'Pueblo',
+      food: 'chinese'
+    }
+
+    origin = munchies_params[:origin]
+    destination = munchies_params[:destination]
+    term = munchies_params[:food]
+    restaurants = MunchiesService.get_restaurants(destination, term)
+    restaurant = Restaurant.new(restaurants)
+    roadtrip = RoadTripFacade.get_trip(munchies_params)
+
+    munchies = Munchies.new(restaurant, roadtrip)
+    expect(munchies).to be_a Munchies
+    expect(munchies.destination_city).to be_a String
+    expect(munchies.travel_time).to be_a String
+    expect(munchies.forecast).to be_a Hash
+    expect(munchies.forecast).to have_key(:summary)
+    expect(munchies.forecast[:summary]).to be_a String
+    expect(munchies.forecast).to have_key(:temperature)
+    expect(munchies.forecast[:temperature]).to be_a Numeric
+    expect(munchies.restaurant).to be_a Hash
+    expect(munchies.restaurant).to have_key(:name)
+    expect(munchies.restaurant[:name]).to be_a String
+    expect(munchies.restaurant).to have_key(:address)
+    expect(munchies.restaurant[:address]).to be_a String
   end
 end
