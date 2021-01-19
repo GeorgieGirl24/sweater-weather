@@ -11,18 +11,14 @@ RSpec.describe 'Image Facade', :vcr do
     expect(image.image[:image_url]).to be_a String
     expect(image.image).to have_key(:link)
     expect(image.image[:link]).to be_a String
-    expect(image.image).to have_key(:location)
-    expect(image.image[:location]).to be_a String
-    expect(image.image).to have_key(:source)
-    expect(image.image[:source]).to be_a String
+    expect(image.credit).to have_key(:source)
+    expect(image.credit[:source]).to be_a String
     expect(image.image).to_not have_key(:description)
     expect(image.credit).to be_a Hash
     expect(image.credit).to have_key(:artist)
     expect(image.credit[:artist]).to be_a String
     expect(image.credit).to have_key(:artist_link)
     expect(image.credit[:artist_link]).to be_a String
-    expect(image.image[:location]).to eq('denver, co')
-    expect(image.image[:location]).to_not eq('paris, france')
     expected = 'https://images.unsplash.com/photo-1600041161228-519e6dd27bac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxOTkxNTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIsJTIwY298ZW58MHx8fA&ixlib=rb-1.2.1&q=80&w=1080'
     expect(image.image[:image_url]).to eq(expected)
   end
