@@ -7,7 +7,7 @@ RSpec.describe 'User API' do
       ActiveRecord::Base.connection.reset_pk_sequence!('users')
       user = User.create(email: 'example@email.com', password: 'password')
 
-      login_params = {
+      body = {
         'email': 'example@email.com',
         'password': 'password'
       }
@@ -17,7 +17,7 @@ RSpec.describe 'User API' do
         'ACCEPT': 'application/json'
       }
 
-      post '/api/v1/sessions', headers: headers, params: JSON.generate(login_params)
+      post '/api/v1/sessions', headers: headers, params: JSON.generate(body)
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
@@ -44,7 +44,7 @@ RSpec.describe 'User API' do
       logged_user = User.find(sessions_response[:data][:id].to_i)
       expect(logged_user).to be_a User
       expect(logged_user.email).to be_a String
-      expect(logged_user.email).to eq(login_params[:email])
+      expect(logged_user.email).to eq(body[:email])
       expect(logged_user.api_key).to be_a String
       expect(logged_user.api_key).to_not be_empty
     end
@@ -54,7 +54,7 @@ RSpec.describe 'User API' do
       ActiveRecord::Base.connection.reset_pk_sequence!('users')
       user = User.create(email: 'example@email.com', password: 'password')
 
-      login_params = {
+      body = {
         'email': '',
         'password': 'password'
       }
@@ -64,7 +64,7 @@ RSpec.describe 'User API' do
         'ACCEPT': 'application/json'
       }
 
-      post '/api/v1/sessions', headers: headers, params: JSON.generate(login_params)
+      post '/api/v1/sessions', headers: headers, params: JSON.generate(body)
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
@@ -78,7 +78,7 @@ RSpec.describe 'User API' do
       ActiveRecord::Base.connection.reset_pk_sequence!('users')
       user = User.create(email: 'example@email.com', password: 'password')
 
-      login_params = {
+      body = {
         'email': 'example@email.com',
         'password': 'notarealpassword'
       }
@@ -88,7 +88,7 @@ RSpec.describe 'User API' do
         'ACCEPT': 'application/json'
       }
 
-      post '/api/v1/sessions', headers: headers, params: JSON.generate(login_params)
+      post '/api/v1/sessions', headers: headers, params: JSON.generate(body)
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
@@ -102,7 +102,7 @@ RSpec.describe 'User API' do
       ActiveRecord::Base.connection.reset_pk_sequence!('users')
       user = User.create(email: 'example@email.com', password: 'password')
 
-      login_params = {
+      body = {
         'email': '@email.com',
         'password': 'notarealpassword'
       }
@@ -112,7 +112,7 @@ RSpec.describe 'User API' do
         'ACCEPT': 'application/json'
       }
 
-      post '/api/v1/sessions', headers: headers, params: JSON.generate(login_params)
+      post '/api/v1/sessions', headers: headers, params: JSON.generate(body)
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
