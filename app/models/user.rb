@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   before_create :set_api_key
-  # before_validation :set_api_key, on: :create
+
   has_secure_password
 
   validates :email, uniqueness: true, presence: true
@@ -10,6 +10,6 @@ class User < ApplicationRecord
   private
 
   def set_api_key
-    self[:api_key] = ApiKey.generator
+    self.api_key = ApiKey.generator
   end
 end
