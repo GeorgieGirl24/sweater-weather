@@ -110,4 +110,22 @@ RSpec.describe Roadtrip, :vcr do
     expect(roadtrip.weather_at_eta[:conditions]).to be_a String
     expect(roadtrip.weather_at_eta[:conditions]).to eq('overcast clouds')
   end
+
+  it 'cannot plan a trip across the ocean to Sweden' do
+    road_trip_params = {
+      origin: 'Denver, CO',
+      destination: 'Stockholm, Sweden'
+    }
+    roadtrip = RoadTripFacade.get_trip(road_trip_params)
+
+    expect(roadtrip).to be_a Roadtrip
+    expect(roadtrip.start_city).to be_a String
+    expect(roadtrip.start_city).to eq('Denver, CO')
+    expect(roadtrip.end_city).to be_a String
+    expect(roadtrip.end_city).to eq('Stockholm, Sweden')
+    expect(roadtrip.travel_time).to be_a String
+    expect(roadtrip.travel_time).to eq('impossible route')
+    expect(roadtrip.weather_at_eta).to be_a String
+    expect(roadtrip.weather_at_eta).to eq('no data available')
+  end
 end
