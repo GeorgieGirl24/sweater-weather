@@ -1,5 +1,5 @@
 class MunchiesService
-  def self.get_restaurant(destination, term)
+  def self.get_restaurants(destination, term)
     response = conn.get('/v3/businesses/search') do |req|
       req.params['location'] = destination
       req.params['term'] = term

@@ -27,31 +27,31 @@ http_interactions:
       Ratelimit-Dailylimit:
       - '5000'
       Ratelimit-Remaining:
-      - '4994'
+      - '4991'
       X-Zipkin-Id:
-      - 2375a7280f0338e1
+      - 84ae8c1dc3dfee63
       Server:
       - envoy
       Ratelimit-Resettime:
       - '2021-01-20T00:00:00+00:00'
       X-Routing-Service:
-      - routing-main--uswest2-5b584d59bc-jhs9v; site=public_api_v3
+      - routing-main--uswest2-5b584d59bc-c4hft; site=public_api_v3
       X-B3-Sampled:
       - '0'
       X-Proxied:
-      - 10-69-90-30-uswest2aprod
+      - 10-69-128-115-uswest2bprod
       X-Extlb:
-      - 10-69-90-30-uswest2aprod
+      - 10-69-128-115-uswest2bprod
       Cache-Control:
       - max-age=0, must-revalidate, no-cache, no-store, private, no-transform
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 19 Jan 2021 18:00:41 GMT
+      - Tue, 19 Jan 2021 18:40:31 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-den8280-DEN
+      - cache-den8277-DEN
       X-Cache:
       - MISS
       X-Cache-Hits:
@@ -67,7 +67,7 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/bingo-burger-pueblo-4?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
         "review_count": 396, "categories": [{"alias": "burgers", "title": "Burgers"}],
         "rating": 4.0, "coordinates": {"latitude": 38.268043, "longitude": -104.609794},
-        "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1":
+        "transactions": ["pickup", "delivery"], "price": "$$", "location": {"address1":
         "101 Central Plz", "address2": "", "address3": "", "city": "Pueblo", "zip_code":
         "81003", "country": "US", "state": "CO", "display_address": ["101 Central
         Plz", "Pueblo, CO 81003"]}, "phone": "+17192258363", "display_phone": "(719)
@@ -108,7 +108,7 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/tacos-navarro-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
         "review_count": 116, "categories": [{"alias": "mexican", "title": "Mexican"}],
         "rating": 4.5, "coordinates": {"latitude": 38.244251452554, "longitude": -104.609048031271},
-        "transactions": ["delivery", "pickup"], "price": "$", "location": {"address1":
+        "transactions": ["pickup", "delivery"], "price": "$", "location": {"address1":
         "223 E Northern Ave", "address2": null, "address3": null, "city": "Pueblo",
         "zip_code": "81006", "country": "US", "state": "CO", "display_address": ["223
         E Northern Ave", "Pueblo, CO 81006"]}, "phone": "+17195466280", "display_phone":
@@ -128,7 +128,7 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/solar-roast-coffee-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
         "review_count": 104, "categories": [{"alias": "coffee", "title": "Coffee &
         Tea"}], "rating": 4.5, "coordinates": {"latitude": 38.2690841, "longitude":
-        -104.6083682}, "transactions": ["delivery", "pickup"], "price": "$", "location":
+        -104.6083682}, "transactions": ["pickup", "delivery"], "price": "$", "location":
         {"address1": "226 N Main St", "address2": "", "address3": "", "city": "Pueblo",
         "zip_code": "81003", "country": "US", "state": "CO", "display_address": ["226
         N Main St", "Pueblo, CO 81003"]}, "phone": "+17195442008", "display_phone":
@@ -148,7 +148,7 @@ http_interactions:
         "review_count": 205, "categories": [{"alias": "coffee", "title": "Coffee &
         Tea"}, {"alias": "sandwiches", "title": "Sandwiches"}, {"alias": "breakfast_brunch",
         "title": "Breakfast & Brunch"}], "rating": 4.0, "coordinates": {"latitude":
-        38.2640899, "longitude": -104.6141053}, "transactions": ["delivery", "pickup"],
+        38.2640899, "longitude": -104.6141053}, "transactions": ["pickup", "delivery"],
         "price": "$", "location": {"address1": "209 S Union Ave", "address2": "",
         "address3": "", "city": "Pueblo", "zip_code": "81003", "country": "US", "state":
         "CO", "display_address": ["209 S Union Ave", "Pueblo, CO 81003"]}, "phone":
@@ -220,7 +220,7 @@ http_interactions:
         "review_count": 52, "categories": [{"alias": "mediterranean", "title": "Mediterranean"},
         {"alias": "greek", "title": "Greek"}, {"alias": "comfortfood", "title": "Comfort
         Food"}], "rating": 4.5, "coordinates": {"latitude": 38.3199331, "longitude":
-        -104.621323}, "transactions": ["delivery", "pickup"], "price": "$$", "location":
+        -104.621323}, "transactions": ["pickup", "delivery"], "price": "$$", "location":
         {"address1": "940 Eagleridge Blvd", "address2": null, "address3": "", "city":
         "Pueblo", "zip_code": "81008", "country": "US", "state": "CO", "display_address":
         ["940 Eagleridge Blvd", "Pueblo, CO 81008"]}, "phone": "+17197661088", "display_phone":
@@ -241,8 +241,8 @@ http_interactions:
         "review_count": 38, "categories": [{"alias": "coffee", "title": "Coffee &
         Tea"}, {"alias": "sandwiches", "title": "Sandwiches"}, {"alias": "breakfast_brunch",
         "title": "Breakfast & Brunch"}], "rating": 4.5, "coordinates": {"latitude":
-        38.3091842332656, "longitude": -104.622146598995}, "transactions": ["delivery",
-        "pickup"], "price": "$", "location": {"address1": "975 US-50", "address2":
+        38.3091842332656, "longitude": -104.622146598995}, "transactions": ["pickup",
+        "delivery"], "price": "$", "location": {"address1": "975 US-50", "address2":
         "", "address3": null, "city": "Pueblo", "zip_code": "81008", "country": "US",
         "state": "CO", "display_address": ["975 US-50", "Pueblo, CO 81008"]}, "phone":
         "+17196961175", "display_phone": "(719) 696-1175", "distance": 6063.887602262677},
@@ -267,5 +267,5 @@ http_interactions:
         Fe Ave", "Pueblo, CO 81006"]}, "phone": "+17192968499", "display_phone": "(719)
         296-8499", "distance": 3646.6394552565494}], "total": 203, "region": {"center":
         {"longitude": -104.5733642578125, "latitude": 38.27035217485165}}}'
-  recorded_at: Tue, 19 Jan 2021 18:00:41 GMT
+  recorded_at: Tue, 19 Jan 2021 18:40:31 GMT
 recorded_with: VCR 6.0.0
