@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User API', :vcr do
   describe 'user registration' do
     it 'can register a new user' do
-      user_params = {
+      body = {
         'email': 'example@email.com',
         'password': 'password',
         'password_confirmation': 'password'
@@ -14,8 +14,7 @@ RSpec.describe 'User API', :vcr do
         'ACCEPT': 'application/json'
       }
 
-      post '/api/v1/users', headers: headers, params: JSON.generate(user_params)
-
+      post '/api/v1/users', headers: headers, params: JSON.generate(body)
       expect(response).to be_successful
       expect(response.status).to eq(201)
       expect(response.content_type).to eq('application/json')
@@ -40,13 +39,13 @@ RSpec.describe 'User API', :vcr do
 
       user = User.last
       expect(user).to be_a User
-      expect(user.email).to eq(user_params[:email])
+      expect(user.email).to eq(body[:email])
       expect(user.api_key).to be_a String
       expect(user.api_key).to eq(user_response[:data][:attributes][:api_key])
     end
 
     it 'can not add a new User with a missing field' do
-      user_params = {
+      body = {
         'email': '',
         'password': 'password',
         'password_confirmation': 'password'
@@ -57,7 +56,7 @@ RSpec.describe 'User API', :vcr do
         'ACCEPT': 'application/json'
       }
 
-      post '/api/v1/users', headers: headers, params: JSON.generate(user_params)
+      post '/api/v1/users', headers: headers, params: JSON.generate(body)
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
@@ -69,9 +68,9 @@ RSpec.describe 'User API', :vcr do
     end
 
     it 'can not add a new User when passwords do not match' do
-      user_params = {
+      body = {
         'email': 'example@email.com',
-        'password': 'nomatchingpassword',
+        'password': 'notmatchingpassword',
         'password_confirmation': 'password'
       }
 
@@ -80,7 +79,7 @@ RSpec.describe 'User API', :vcr do
         'ACCEPT': 'application/json'
       }
 
-      post '/api/v1/users', headers: headers, params: JSON.generate(user_params)
+      post '/api/v1/users', headers: headers, params: JSON.generate(body)
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
@@ -91,7 +90,7 @@ RSpec.describe 'User API', :vcr do
     end
 
     it 'cannot add a new User if the email is in use' do
-      user_params = {
+      body = {
         'email': 'example@email.com',
         'password': 'password',
         'password_confirmation': 'password'
@@ -102,13 +101,13 @@ RSpec.describe 'User API', :vcr do
         'ACCEPT': 'application/json'
       }
 
-      post '/api/v1/users', headers: headers, params: JSON.generate(user_params)
+      post '/api/v1/users', headers: headers, params: JSON.generate(body)
 
       expect(response).to be_successful
       expect(response.status).to eq(201)
       expect(response.content_type).to eq('application/json')
 
-      user_2_params = {
+      body_2 = {
         'email': 'example@email.com',
         'password': 'password',
         'password_confirmation': 'password'
@@ -119,7 +118,7 @@ RSpec.describe 'User API', :vcr do
         'ACCEPT': 'application/json'
       }
 
-      post '/api/v1/users', headers: headers, params: JSON.generate(user_2_params)
+      post '/api/v1/users', headers: headers, params: JSON.generate(body_2)
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)

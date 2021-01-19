@@ -11,10 +11,8 @@ RSpec.describe Image, :vcr do
     expect(image.image[:image_url]).to be_a String
     expect(image.image).to have_key(:link)
     expect(image.image[:link]).to be_a String
-    expect(image.image).to have_key(:location)
-    expect(image.image[:location]).to be_a String
-    expect(image.image).to have_key(:source)
-    expect(image.image[:source]).to be_a String
+    expect(image.credit).to have_key(:source)
+    expect(image.credit[:source]).to be_a String
     expect(image.credit).to be_a Hash
     expect(image.credit).to have_key(:artist)
     expect(image.credit[:artist]).to be_a String
@@ -23,8 +21,7 @@ RSpec.describe Image, :vcr do
     expected = 'https://images.unsplash.com/photo-1600041161228-519e6dd27bac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxOTkxNTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIsJTIwY298ZW58MHx8fA&ixlib=rb-1.2.1&q=80&w=1080'
     expect(image.image[:image_url]).to eq(expected)
     expect(image.image[:link]).to eq('https://unsplash.com/photos/hdzGZRCYMSU')
-    expect(image.image[:location]).to eq('denver, co')
-    expect(image.image[:source]).to eq('unsplash.com')
+    expect(image.credit[:source]).to eq('https://unsplash.com/')
     expect(image.credit[:artist]).to eq('Michael Kilcoyne')
     expect(image.credit[:artist_link]).to eq('https://unsplash.com/@mikekilcoyne')
   end
