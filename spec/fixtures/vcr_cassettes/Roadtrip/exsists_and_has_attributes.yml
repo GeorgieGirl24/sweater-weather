@@ -1,0 +1,249 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/directions/v2/route?from=Denver,%20CO&key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&to=Jacksonville,%20FL&transportMode=AUTO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Jan 2021 02:52:08 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=D6C4EF24654B88FA4BF270EBDB32A457; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Tue, 19 Jan 2021 02:52:08 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: UTF-8
+      string: '{"route":{"hasTollRoad":true,"hasBridge":true,"boundingBox":{"lr":{"lng":-81.65535,"lat":30.273279},"ul":{"lng":-104.994835,"lat":39.766827}},"distance":1747.9093,"hasTimedRestriction":false,"hasTunnel":true,"hasHighway":true,"computedWaypoints":[],"routeError":{"errorCode":-400,"message":""},"formattedTime":"25:26:11","sessionId":"60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","hasAccessRestriction":false,"realTime":10000000,"hasSeasonalClosure":false,"hasCountryCross":false,"fuelUsed":87.52,"legs":[{"hasTollRoad":true,"hasBridge":true,"destNarrative":"Proceed
+        to JACKSONVILLE, FL.","distance":1747.9093,"hasTimedRestriction":false,"hasTunnel":true,"hasHighway":true,"index":0,"formattedTime":"25:26:11","origIndex":4,"hasAccessRestriction":false,"hasSeasonalClosure":false,"hasCountryCross":false,"roadGradeStrategy":[[]],"destIndex":16,"time":91571,"hasUnpaved":false,"origNarrative":"Go
+        east on I-70 E (Portions toll) (Crossing into Kansas).","maneuvers":[{"distance":0.135,"streets":["E
+        14th Ave"],"narrative":"Start out going east on E 14th Ave toward N Grant
+        St.","turnType":0,"startPoint":{"lng":-104.984856,"lat":39.738453},"index":0,"formattedTime":"00:00:23","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=39.73845291137695,-104.98485565185547|marker-1||39.73845291137695,-104.9823226928711|marker-2||&center=39.73845291137695,-104.98358917236328&defaultMarker=none&zoom=13&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":0,"time":23,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/icon-dirs-start_sm.gif","direction":8},{"distance":0.629,"streets":["N
+        Logan St"],"narrative":"Turn left onto N Logan St.","turnType":6,"startPoint":{"lng":-104.982323,"lat":39.738453},"index":1,"formattedTime":"00:01:35","directionName":"North","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=39.73845291137695,-104.9823226928711|marker-2||39.7475700378418,-104.98231506347656|marker-3||&center=39.743011474609375,-104.98231887817383&defaultMarker=none&zoom=10&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":0,"time":95,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_left_sm.gif","direction":1},{"distance":0.217,"streets":["E
+        20th Ave"],"narrative":"Turn right onto E 20th Ave.","turnType":2,"startPoint":{"lng":-104.982315,"lat":39.74757},"index":2,"formattedTime":"00:00:42","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=39.7475700378418,-104.98231506347656|marker-3||39.74752426147461,-104.9782485961914|marker-4||&center=39.7475471496582,-104.98028182983398&defaultMarker=none&zoom=12&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":0,"time":42,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_right_sm.gif","direction":8},{"distance":1.687,"streets":["Park
+        Ave"],"narrative":"Turn sharp left onto Park Ave.","turnType":5,"startPoint":{"lng":-104.978249,"lat":39.747524},"index":3,"formattedTime":"00:03:52","directionName":"Northwest","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=39.74752426147461,-104.9782485961914|marker-4||39.76682662963867,-104.99483489990234|marker-5||&center=39.75717544555664,-104.98654174804688&defaultMarker=none&zoom=9&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1024,"time":232,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_sharp_left_sm.gif","direction":2},{"distance":597.4641,"streets":["I-70
+        E"],"narrative":"Merge onto I-70 E toward Limon (Portions toll) (Crossing
+        into Kansas).","turnType":10,"startPoint":{"lng":-104.994835,"lat":39.766827},"index":4,"formattedTime":"08:11:28","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"70","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=70&d=EAST","direction":8}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=39.76682662963867,-104.99483489990234|marker-5||39.09195327758789,-94.63475036621094|marker-6||&center=39.42938995361328,-99.81479263305664&defaultMarker=none&zoom=2&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1153,"time":29488,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif","direction":8},{"distance":4.077,"streets":["I-670
+        E"],"narrative":"Merge onto I-670 E via EXIT 421B on the left (Crossing into
+        Missouri).","turnType":11,"startPoint":{"lng":-94.63475,"lat":39.091953},"index":5,"formattedTime":"00:04:57","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"670","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=670&d=EAST","direction":8},{"extraText":"","text":"421B","type":1001,"url":"http://icons.mqcdn.com/icons/rs1001.png?n=421B&d=LEFT","direction":0}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=39.09195327758789,-94.63475036621094|marker-6||39.0960693359375,-94.56486511230469|marker-7||&center=39.094011306762695,-94.59980773925781&defaultMarker=none&zoom=8&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":3200,"time":297,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_merge_left_sm.gif","direction":8},{"distance":249.324,"streets":["I-70
+        E"],"narrative":"I-670 E becomes I-70 E (Crossing into Illinois).","turnType":0,"startPoint":{"lng":-94.564865,"lat":39.096069},"index":6,"formattedTime":"03:47:11","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"70","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=70&d=EAST","direction":8}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=39.0960693359375,-94.56486511230469|marker-7||38.63564682006836,-90.14810180664062|marker-8||&center=38.86585807800293,-92.35648345947266&defaultMarker=none&zoom=3&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1152,"time":13631,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_straight_sm.gif","direction":8},{"distance":70.667,"streets":["I-64
+        E"],"narrative":"Merge onto I-64 E via EXIT 3 toward Louisville.","turnType":10,"startPoint":{"lng":-90.148102,"lat":38.635647},"index":7,"formattedTime":"01:02:55","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"64","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=64&d=EAST","direction":8},{"extraText":"","text":"3","type":1001,"url":"http://icons.mqcdn.com/icons/rs1001.png?n=3&d=RIGHT","direction":0}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=38.63564682006836,-90.14810180664062|marker-8||38.338504791259766,-88.96117401123047|marker-9||&center=38.48707580566406,-89.55463790893555&defaultMarker=none&zoom=4&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1152,"time":3775,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif","direction":8},{"distance":51.78,"streets":["I-57
+        S"],"narrative":"Merge onto I-57 S toward Louisville/Memphis.","turnType":10,"startPoint":{"lng":-88.961174,"lat":38.338505},"index":8,"formattedTime":"00:45:15","directionName":"South","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"57","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=57&d=SOUTH","direction":4}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=38.338504791259766,-88.96117401123047|marker-9||37.6157112121582,-88.99159240722656|marker-10||&center=37.977108001708984,-88.97638320922852&defaultMarker=none&zoom=4&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1152,"time":2715,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif","direction":4},{"distance":178.742,"streets":["I-24
+        E"],"narrative":"Merge onto I-24 E via EXIT 44 toward Nashville (Passing through
+        Kentucky, then crossing into Tennessee).","turnType":10,"startPoint":{"lng":-88.991592,"lat":37.615711},"index":9,"formattedTime":"02:35:06","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"24","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=24&d=EAST","direction":8},{"extraText":"","text":"44","type":1001,"url":"http://icons.mqcdn.com/icons/rs1001.png?n=44&d=RIGHT","direction":0}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=37.6157112121582,-88.99159240722656|marker-10||36.194766998291016,-86.77617645263672|marker-11||&center=36.90523910522461,-87.88388442993164&defaultMarker=none&zoom=3&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1152,"time":9306,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif","direction":8},{"distance":138.578,"streets":["I-24
+        E"],"narrative":"Keep left to take I-24 E via EXIT 86 toward Chattanooga/Knoxville/I-40
+        E (Passing through Georgia, then crossing into Tennessee).","turnType":7,"startPoint":{"lng":-86.776176,"lat":36.194767},"index":10,"formattedTime":"02:07:11","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"24","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=24&d=EAST","direction":8},{"extraText":"","text":"86","type":1001,"url":"http://icons.mqcdn.com/icons/rs1001.png?n=86&d=LEFT","direction":0}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=36.194766998291016,-86.77617645263672|marker-11||35.00406265258789,-85.21772766113281|marker-12||&center=35.59941482543945,-85.99695205688477&defaultMarker=none&zoom=3&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1152,"time":7631,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_slight_left_sm.gif","direction":8},{"distance":113.576,"streets":["I-75
+        S","I-85 S","GA-403 S","GA-401 S"],"narrative":"Merge onto I-75 S/I-85 S/GA-403
+        S/GA-401 S via EXIT 185A toward Atlanta (Crossing into Georgia).","turnType":10,"startPoint":{"lng":-85.217728,"lat":35.004063},"index":11,"formattedTime":"01:43:48","directionName":"South","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"75","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=75&d=SOUTH","direction":4},{"extraText":"","text":"85","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=85&d=SOUTH","direction":4},{"extraText":"","text":"403","type":509,"url":"http://icons.mqcdn.com/icons/rs509.png?n=403&d=SOUTH","direction":4},{"extraText":"","text":"401","type":509,"url":"http://icons.mqcdn.com/icons/rs509.png?n=401&d=SOUTH","direction":4},{"extraText":"","text":"185A","type":1001,"url":"http://icons.mqcdn.com/icons/rs1001.png?n=185A&d=RIGHT","direction":0}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=35.00406265258789,-85.21772766113281|marker-12||33.693302154541016,-84.40375518798828|marker-13||&center=34.34868240356445,-84.81074142456055&defaultMarker=none&zoom=3&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":3200,"time":6228,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif","direction":4},{"distance":64.785,"streets":["I-75
+        S","GA-401 S"],"narrative":"Keep left to take I-75 S/GA-401 S toward Macon/International.","turnType":7,"startPoint":{"lng":-84.403755,"lat":33.693302},"index":12,"formattedTime":"00:57:43","directionName":"South","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"75","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=75&d=SOUTH","direction":4},{"extraText":"","text":"401","type":509,"url":"http://icons.mqcdn.com/icons/rs509.png?n=401&d=SOUTH","direction":4}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=33.693302154541016,-84.40375518798828|marker-13||32.960365295410156,-83.81513214111328|marker-14||&center=33.326833724975586,-84.10944366455078&defaultMarker=none&zoom=4&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1152,"time":3463,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_slight_left_sm.gif","direction":4},{"distance":15.55,"streets":["I-475
+        S","GA-408 S"],"narrative":"Keep right to take I-475 S/GA-408 S via EXIT 177
+        toward I-75 S/Valdosta.","turnType":1,"startPoint":{"lng":-83.815132,"lat":32.960365},"index":13,"formattedTime":"00:13:30","directionName":"South","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"475","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=475&d=SOUTH","direction":4},{"extraText":"","text":"408","type":509,"url":"http://icons.mqcdn.com/icons/rs509.png?n=408&d=SOUTH","direction":4},{"extraText":"","text":"177","type":1001,"url":"http://icons.mqcdn.com/icons/rs1001.png?n=177&d=RIGHT","direction":0}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=32.960365295410156,-83.81513214111328|marker-14||32.758453369140625,-83.71102905273438|marker-15||&center=32.85940933227539,-83.76308059692383&defaultMarker=none&zoom=6&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1152,"time":810,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_slight_right_sm.gif","direction":4},{"distance":192.052,"streets":["I-75
+        S"],"narrative":"Merge onto I-75 S via the exit on the left (Crossing into
+        Florida).","turnType":11,"startPoint":{"lng":-83.711029,"lat":32.758453},"index":14,"formattedTime":"02:45:53","directionName":"South","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"75","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=75&d=SOUTH","direction":4}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=32.758453369140625,-83.71102905273438|marker-15||30.273279190063477,-82.75820922851562|marker-16||&center=31.51586627960205,-83.234619140625&defaultMarker=none&zoom=2&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1152,"time":9953,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_merge_left_sm.gif","direction":4},{"distance":65.918,"streets":["I-10
+        E","FL-8 E"],"narrative":"Merge onto I-10 E/FL-8 E via EXIT 435 toward Jacksonville.","turnType":10,"startPoint":{"lng":-82.758209,"lat":30.273279},"index":15,"formattedTime":"00:59:31","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"10","type":1,"url":"http://icons.mqcdn.com/icons/rs1.png?n=10&d=EAST","direction":8},{"extraText":"","text":"8","type":508,"url":"http://icons.mqcdn.com/icons/rs508.png?n=8&d=EAST","direction":8},{"extraText":"","text":"435","type":1001,"url":"http://icons.mqcdn.com/icons/rs1001.png?n=435&d=RIGHT","direction":0}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=30.273279190063477,-82.75820922851562|marker-16||30.320634841918945,-81.6924057006836|marker-17||&center=30.29695701599121,-82.22530746459961&defaultMarker=none&zoom=5&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1152,"time":3571,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif","direction":8},{"distance":0.104,"streets":[],"narrative":"Take
+        the Stockton St exit, EXIT 362.","turnType":14,"startPoint":{"lng":-81.692406,"lat":30.320635},"index":16,"formattedTime":"00:00:08","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[{"extraText":"","text":"362","type":1001,"url":"http://icons.mqcdn.com/icons/rs1001.png?n=362&d=RIGHT","direction":0}],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=30.320634841918945,-81.6924057006836|marker-17||30.32038688659668,-81.6906967163086|marker-18||&center=30.320510864257812,-81.6915512084961&defaultMarker=none&zoom=14&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1024,"time":8,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_gr_exitright_sm.gif","direction":8},{"distance":0.234,"streets":[],"narrative":"Keep
+        left at the fork in the ramp.","turnType":17,"startPoint":{"lng":-81.690697,"lat":30.320387},"index":17,"formattedTime":"00:00:19","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=30.32038688659668,-81.6906967163086|marker-18||30.320436477661133,-81.6867904663086|marker-19||&center=30.320411682128906,-81.6887435913086&defaultMarker=none&zoom=13&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":0,"time":19,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_fork_left2_sm.gif","direction":8},{"distance":0.287,"streets":[],"narrative":"Keep
+        left at the fork in the ramp.","turnType":17,"startPoint":{"lng":-81.68679,"lat":30.320436},"index":18,"formattedTime":"00:00:22","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=30.320436477661133,-81.6867904663086|marker-19||30.320724487304688,-81.6820297241211|marker-20||&center=30.32058048248291,-81.68441009521484&defaultMarker=none&zoom=12&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1024,"time":22,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_fork_left2_sm.gif","direction":8},{"distance":0.645,"streets":[],"narrative":"Keep
+        left at the fork in the ramp.","turnType":17,"startPoint":{"lng":-81.68203,"lat":30.320724},"index":19,"formattedTime":"00:00:50","directionName":"Northeast","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=30.320724487304688,-81.6820297241211|marker-20||30.32848358154297,-81.67671966552734|marker-21||&center=30.324604034423828,-81.67937469482422&defaultMarker=none&zoom=10&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1024,"time":50,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_fork_left2_sm.gif","direction":3},{"distance":0.249,"streets":[],"narrative":"Keep
+        right at the fork in the ramp.","turnType":16,"startPoint":{"lng":-81.67672,"lat":30.328484},"index":20,"formattedTime":"00:00:26","directionName":"Northeast","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=30.32848358154297,-81.67671966552734|marker-21||30.329660415649414,-81.67295837402344|marker-22||&center=30.32907199859619,-81.67483901977539&defaultMarker=none&zoom=13&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":1024,"time":26,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_fork_right2_sm.gif","direction":3},{"distance":1.079,"streets":["W
+        Forsyth St"],"narrative":"Merge onto W Forsyth St.","turnType":10,"startPoint":{"lng":-81.672958,"lat":30.32966},"index":21,"formattedTime":"00:02:36","directionName":"East","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=30.329660415649414,-81.67295837402344|marker-22||30.326475143432617,-81.65534973144531|marker-23||&center=30.328067779541016,-81.66415405273438&defaultMarker=none&zoom=10&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":0,"time":156,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif","direction":8},{"distance":0.056,"streets":["N
+        Newnan St"],"narrative":"Turn right onto N Newnan St.","turnType":2,"startPoint":{"lng":-81.65535,"lat":30.326475},"index":22,"formattedTime":"00:00:20","directionName":"South","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=30.326475143432617,-81.65534973144531|marker-23||30.32568359375,-81.65556335449219|marker-24||&center=30.32607936859131,-81.65545654296875&defaultMarker=none&zoom=14&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":0,"time":20,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_right_sm.gif","direction":4},{"distance":0.074,"streets":["E
+        Bay St"],"narrative":"Turn right onto E Bay St.","turnType":2,"startPoint":{"lng":-81.655563,"lat":30.325684},"index":23,"formattedTime":"00:00:10","directionName":"West","maneuverNotes":[],"linkIds":[],"signs":[],"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&size=225,160&locations=30.32568359375,-81.65556335449219|marker-24||30.32596778869629,-81.6567611694336|marker-25||&center=30.325825691223145,-81.65616226196289&defaultMarker=none&zoom=15&rand=-413738793&session=60064958-00e2-5f21-02b4-3331-0a2ca61e05f5","transportMode":"AUTO","attributes":0,"time":10,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/rs_right_sm.gif","direction":7},{"distance":0,"streets":[],"narrative":"Welcome
+        to JACKSONVILLE, FL.","turnType":-1,"startPoint":{"lng":-81.656761,"lat":30.325968},"index":24,"formattedTime":"00:00:00","directionName":"","maneuverNotes":[],"linkIds":[],"signs":[],"transportMode":"AUTO","attributes":0,"time":0,"iconUrl":"http://content.mqcdn.com/mqsite/turnsigns/icon-dirs-end_sm.gif","direction":0}],"hasFerry":false}],"options":{"arteryWeights":[],"cyclingRoadFactor":1,"timeType":0,"useTraffic":false,"returnLinkDirections":false,"countryBoundaryDisplay":true,"enhancedNarrative":false,"locale":"en_US","tryAvoidLinkIds":[],"drivingStyle":2,"doReverseGeocode":true,"generalize":-1,"mustAvoidLinkIds":[],"sideOfStreetDisplay":true,"routeType":"FASTEST","avoidTimedConditions":false,"routeNumber":0,"shapeFormat":"raw","maxWalkingDistance":-1,"destinationManeuverDisplay":true,"transferPenalty":-1,"narrativeType":"text","walkingSpeed":-1,"urbanAvoidFactor":-1,"stateBoundaryDisplay":true,"unit":"M","highwayEfficiency":22,"maxLinkId":0,"maneuverPenalty":-1,"avoidTripIds":[],"filterZoneFactor":-1,"manmaps":"true"},"locations":[{"dragPoint":false,"displayLatLng":{"lng":-104.984856,"lat":39.738453},"adminArea4":"Denver
+        County","adminArea5":"Denver","postalCode":"","adminArea1":"US","adminArea3":"CO","type":"s","sideOfStreet":"N","geocodeQualityCode":"A5XAX","adminArea4Type":"County","linkId":40287819,"street":"","adminArea5Type":"City","geocodeQuality":"CITY","adminArea1Type":"Country","adminArea3Type":"State","latLng":{"lng":-104.984853,"lat":39.738453}},{"dragPoint":false,"displayLatLng":{"lng":-81.656761,"lat":30.325968},"adminArea4":"Duval
+        County","adminArea5":"Jacksonville","postalCode":"","adminArea1":"US","adminArea3":"FL","type":"s","sideOfStreet":"N","geocodeQualityCode":"A5XAX","adminArea4Type":"County","linkId":69974938,"street":"","adminArea5Type":"City","geocodeQuality":"CITY","adminArea1Type":"Country","adminArea3Type":"State","latLng":{"lng":-81.65676,"lat":30.325968}}],"time":91571,"hasUnpaved":false,"locationSequence":[0,1],"hasFerry":false},"info":{"statuscode":0,"copyright":{"imageAltText":"©
+        2020 MapQuest, Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","text":"©
+        2020 MapQuest, Inc."},"messages":[]}}'
+  recorded_at: Tue, 19 Jan 2021 02:52:08 GMT
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&location=Jacksonville,%20FL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Jan 2021 02:52:08 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1037'
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Geocodetransactioncount:
+      - '1'
+      Last-Modified:
+      - Tue, 19 Jan 2021 02:52:08 GMT
+      Pragma:
+      - no-cache
+      Reversegeocodetransactioncount:
+      - '0'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=6E6E868AE1B38EC1D86B6449B4F9B653; Path=/; HttpOnly
+      Status:
+      - success
+      Transactionweight:
+      - '1.0'
+    body:
+      encoding: UTF-8
+      string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
+        Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
+        2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"Jacksonville,
+        FL"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Jacksonville","adminArea5Type":"City","adminArea4":"Duval
+        County","adminArea4Type":"County","adminArea3":"FL","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282039196","unknownInput":"","type":"s","latLng":{"lat":30.325968,"lng":-81.65676},"displayLatLng":{"lat":30.325968,"lng":-81.65676},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&type=map&size=225,160&locations=30.325968,-81.65676|marker-sm-50318A-1&scalebar=true&zoom=12&rand=281691851"}]}]}'
+  recorded_at: Tue, 19 Jan 2021 02:52:08 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/onecall?appid=90b7b46942482cad09acd0411e6fd039&lat=30.325968&lon=-81.65676&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 19 Jan 2021 02:52:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '18606'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/onecall?lat=30.33&lon=-81.66&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":30.326,"lon":-81.6568,"timezone":"America/New_York","timezone_offset":-18000,"current":{"dt":1611024729,"sunrise":1610972589,"sunset":1611010245,"temp":42.12,"feels_like":35.49,"pressure":1024,"humidity":49,"dew_point":25.23,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":3.67,"wind_deg":319,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},"minutely":[{"dt":1611024780,"precipitation":0},{"dt":1611024840,"precipitation":0},{"dt":1611024900,"precipitation":0},{"dt":1611024960,"precipitation":0},{"dt":1611025020,"precipitation":0},{"dt":1611025080,"precipitation":0},{"dt":1611025140,"precipitation":0},{"dt":1611025200,"precipitation":0},{"dt":1611025260,"precipitation":0},{"dt":1611025320,"precipitation":0},{"dt":1611025380,"precipitation":0},{"dt":1611025440,"precipitation":0},{"dt":1611025500,"precipitation":0},{"dt":1611025560,"precipitation":0},{"dt":1611025620,"precipitation":0},{"dt":1611025680,"precipitation":0},{"dt":1611025740,"precipitation":0},{"dt":1611025800,"precipitation":0},{"dt":1611025860,"precipitation":0},{"dt":1611025920,"precipitation":0},{"dt":1611025980,"precipitation":0},{"dt":1611026040,"precipitation":0},{"dt":1611026100,"precipitation":0},{"dt":1611026160,"precipitation":0},{"dt":1611026220,"precipitation":0},{"dt":1611026280,"precipitation":0},{"dt":1611026340,"precipitation":0},{"dt":1611026400,"precipitation":0},{"dt":1611026460,"precipitation":0},{"dt":1611026520,"precipitation":0},{"dt":1611026580,"precipitation":0},{"dt":1611026640,"precipitation":0},{"dt":1611026700,"precipitation":0},{"dt":1611026760,"precipitation":0},{"dt":1611026820,"precipitation":0},{"dt":1611026880,"precipitation":0},{"dt":1611026940,"precipitation":0},{"dt":1611027000,"precipitation":0},{"dt":1611027060,"precipitation":0},{"dt":1611027120,"precipitation":0},{"dt":1611027180,"precipitation":0},{"dt":1611027240,"precipitation":0},{"dt":1611027300,"precipitation":0},{"dt":1611027360,"precipitation":0},{"dt":1611027420,"precipitation":0},{"dt":1611027480,"precipitation":0},{"dt":1611027540,"precipitation":0},{"dt":1611027600,"precipitation":0},{"dt":1611027660,"precipitation":0},{"dt":1611027720,"precipitation":0},{"dt":1611027780,"precipitation":0},{"dt":1611027840,"precipitation":0},{"dt":1611027900,"precipitation":0},{"dt":1611027960,"precipitation":0},{"dt":1611028020,"precipitation":0},{"dt":1611028080,"precipitation":0},{"dt":1611028140,"precipitation":0},{"dt":1611028200,"precipitation":0},{"dt":1611028260,"precipitation":0},{"dt":1611028320,"precipitation":0},{"dt":1611028380,"precipitation":0}],"hourly":[{"dt":1611021600,"temp":42.12,"feels_like":35.49,"pressure":1024,"humidity":49,"dew_point":25.23,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":3.67,"wind_deg":319,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611025200,"temp":45.7,"feels_like":39.67,"pressure":1024,"humidity":48,"dew_point":27.72,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":3.2,"wind_deg":325,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611028800,"temp":47.17,"feels_like":41.63,"pressure":1025,"humidity":50,"dew_point":29.8,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":2.86,"wind_deg":333,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611032400,"temp":47.53,"feels_like":42.03,"pressure":1026,"humidity":51,"dew_point":30.52,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":3,"wind_deg":341,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611036000,"temp":47.26,"feels_like":41.85,"pressure":1026,"humidity":53,"dew_point":31.14,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":3.02,"wind_deg":330,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611039600,"temp":46.71,"feels_like":41.2,"pressure":1026,"humidity":54,"dew_point":28.11,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":3.15,"wind_deg":332,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611043200,"temp":46.2,"feels_like":40.48,"pressure":1026,"humidity":55,"dew_point":28.2,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":3.56,"wind_deg":338,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611046800,"temp":45.7,"feels_like":40.08,"pressure":1026,"humidity":56,"dew_point":28.35,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":3.36,"wind_deg":349,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611050400,"temp":45.28,"feels_like":39.81,"pressure":1026,"humidity":57,"dew_point":28.53,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":3.11,"wind_deg":352,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611054000,"temp":44.83,"feels_like":39.43,"pressure":1027,"humidity":58,"dew_point":28.72,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":2.98,"wind_deg":342,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611057600,"temp":44.35,"feels_like":39.47,"pressure":1028,"humidity":59,"dew_point":28.78,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":2.06,"wind_deg":349,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611061200,"temp":45.37,"feels_like":40.77,"pressure":1028,"humidity":57,"dew_point":29.14,"uvi":0.21,"clouds":0,"visibility":10000,"wind_speed":1.59,"wind_deg":355,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611064800,"temp":49.64,"feels_like":45.34,"pressure":1029,"humidity":49,"dew_point":29.62,"uvi":0.87,"clouds":0,"visibility":10000,"wind_speed":1.1,"wind_deg":43,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611068400,"temp":54.63,"feels_like":50.07,"pressure":1029,"humidity":40,"dew_point":29.52,"uvi":2.01,"clouds":0,"visibility":10000,"wind_speed":1.43,"wind_deg":72,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611072000,"temp":58.71,"feels_like":54.23,"pressure":1029,"humidity":35,"dew_point":28.74,"uvi":3.23,"clouds":0,"visibility":10000,"wind_speed":1.39,"wind_deg":37,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611075600,"temp":61.61,"feels_like":56.75,"pressure":1029,"humidity":31,"dew_point":27.3,"uvi":4.03,"clouds":0,"visibility":10000,"wind_speed":1.95,"wind_deg":7,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611079200,"temp":63.48,"feels_like":58.53,"pressure":1029,"humidity":28,"dew_point":25.84,"uvi":4,"clouds":0,"visibility":10000,"wind_speed":1.88,"wind_deg":356,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611082800,"temp":64.54,"feels_like":60.24,"pressure":1028,"humidity":27,"dew_point":25.05,"uvi":3.19,"clouds":0,"visibility":10000,"wind_speed":0.76,"wind_deg":5,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611086400,"temp":64.56,"feels_like":60.53,"pressure":1027,"humidity":27,"dew_point":24.62,"uvi":1.95,"clouds":0,"visibility":10000,"wind_speed":0.27,"wind_deg":104,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611090000,"temp":63.54,"feels_like":59.09,"pressure":1027,"humidity":28,"dew_point":24.51,"uvi":0.83,"clouds":0,"visibility":10000,"wind_speed":1.01,"wind_deg":212,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611093600,"temp":61.54,"feels_like":57.13,"pressure":1028,"humidity":31,"dew_point":27.37,"uvi":0.19,"clouds":0,"visibility":10000,"wind_speed":1.14,"wind_deg":163,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611097200,"temp":57.4,"feels_like":52.66,"pressure":1028,"humidity":36,"dew_point":28.06,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":1.72,"wind_deg":149,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611100800,"temp":55.24,"feels_like":50.22,"pressure":1029,"humidity":40,"dew_point":30.09,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":2.39,"wind_deg":152,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611104400,"temp":53.91,"feels_like":48.81,"pressure":1029,"humidity":42,"dew_point":31.15,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":2.53,"wind_deg":144,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611108000,"temp":52.9,"feels_like":47.98,"pressure":1029,"humidity":44,"dew_point":31.86,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":2.26,"wind_deg":183,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611111600,"temp":51.96,"feels_like":47.08,"pressure":1029,"humidity":46,"dew_point":31.73,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":2.26,"wind_deg":238,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611115200,"temp":51.13,"feels_like":46.08,"pressure":1028,"humidity":47,"dew_point":31.33,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":2.55,"wind_deg":245,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611118800,"temp":50.7,"feels_like":45.28,"pressure":1028,"humidity":48,"dew_point":31.03,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":3.2,"wind_deg":242,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611122400,"temp":50.31,"feels_like":44.82,"pressure":1028,"humidity":48,"dew_point":30.87,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":3.24,"wind_deg":233,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611126000,"temp":49.95,"feels_like":44.47,"pressure":1028,"humidity":49,"dew_point":30.74,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":3.27,"wind_deg":239,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611129600,"temp":49.57,"feels_like":43.7,"pressure":1027,"humidity":49,"dew_point":30.58,"uvi":0,"clouds":2,"visibility":10000,"wind_speed":3.87,"wind_deg":265,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611133200,"temp":49.05,"feels_like":42.93,"pressure":1027,"humidity":50,"dew_point":30.4,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":4.32,"wind_deg":287,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611136800,"temp":48.65,"feels_like":42.85,"pressure":1027,"humidity":51,"dew_point":30.25,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":3.78,"wind_deg":279,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611140400,"temp":48.47,"feels_like":42.67,"pressure":1027,"humidity":51,"dew_point":30,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":3.74,"wind_deg":264,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611144000,"temp":48.47,"feels_like":42.44,"pressure":1028,"humidity":51,"dew_point":29.71,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":4.16,"wind_deg":266,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1611147600,"temp":49.17,"feels_like":43.25,"pressure":1028,"humidity":50,"dew_point":30.11,"uvi":0.21,"clouds":0,"visibility":10000,"wind_speed":4,"wind_deg":282,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611151200,"temp":52.93,"feels_like":46.49,"pressure":1028,"humidity":44,"dew_point":31.28,"uvi":0.9,"clouds":0,"visibility":10000,"wind_speed":5.01,"wind_deg":298,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611154800,"temp":56.8,"feels_like":49.98,"pressure":1028,"humidity":40,"dew_point":33.24,"uvi":2.08,"clouds":0,"visibility":10000,"wind_speed":5.95,"wind_deg":299,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611158400,"temp":61,"feels_like":54.43,"pressure":1028,"humidity":39,"dew_point":36,"uvi":3.33,"clouds":0,"visibility":10000,"wind_speed":6.4,"wind_deg":303,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611162000,"temp":64.29,"feels_like":57.94,"pressure":1027,"humidity":38,"dew_point":38.61,"uvi":4.15,"clouds":0,"visibility":10000,"wind_speed":6.73,"wind_deg":294,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611165600,"temp":66.67,"feels_like":60.55,"pressure":1026,"humidity":38,"dew_point":40.77,"uvi":4.12,"clouds":3,"visibility":10000,"wind_speed":7,"wind_deg":282,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1611169200,"temp":68.36,"feels_like":62.94,"pressure":1025,"humidity":39,"dew_point":42.85,"uvi":3.29,"clouds":83,"visibility":10000,"wind_speed":6.55,"wind_deg":283,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"pop":0},{"dt":1611172800,"temp":68.86,"feels_like":63.81,"pressure":1024,"humidity":41,"dew_point":44.33,"uvi":2.02,"clouds":88,"visibility":10000,"wind_speed":6.6,"wind_deg":292,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0},{"dt":1611176400,"temp":68.34,"feels_like":63.34,"pressure":1024,"humidity":43,"dew_point":45.41,"uvi":0.85,"clouds":80,"visibility":10000,"wind_speed":6.8,"wind_deg":306,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"pop":0},{"dt":1611180000,"temp":66.13,"feels_like":62.44,"pressure":1024,"humidity":49,"dew_point":46.6,"uvi":0.16,"clouds":85,"visibility":10000,"wind_speed":5.06,"wind_deg":316,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0},{"dt":1611183600,"temp":61.97,"feels_like":59.38,"pressure":1024,"humidity":57,"dew_point":46.65,"uvi":0,"clouds":81,"visibility":10000,"wind_speed":3.18,"wind_deg":329,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"pop":0},{"dt":1611187200,"temp":60.01,"feels_like":57.76,"pressure":1024,"humidity":61,"dew_point":46.85,"uvi":0,"clouds":68,"visibility":10000,"wind_speed":2.57,"wind_deg":327,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"pop":0},{"dt":1611190800,"temp":58.5,"feels_like":56.7,"pressure":1025,"humidity":66,"dew_point":47.28,"uvi":0,"clouds":14,"visibility":10000,"wind_speed":2.06,"wind_deg":332,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0}],"daily":[{"dt":1610989200,"sunrise":1610972589,"sunset":1611010245,"temp":{"day":58.37,"min":42.12,"max":61.29,"night":47.17,"eve":55.17,"morn":46.18},"feels_like":{"day":50.16,"night":41.63,"eve":48.33,"morn":39.81},"pressure":1023,"humidity":35,"dew_point":27.64,"wind_speed":7.92,"wind_deg":291,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":3.64},{"dt":1611075600,"sunrise":1611058974,"sunset":1611096697,"temp":{"day":61.61,"min":44.35,"max":64.56,"night":51.13,"eve":57.4,"morn":44.83},"feels_like":{"day":56.75,"night":46.08,"eve":52.66,"morn":39.43},"pressure":1029,"humidity":31,"dew_point":27.3,"wind_speed":1.95,"wind_deg":7,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":4.03},{"dt":1611162000,"sunrise":1611145357,"sunset":1611183150,"temp":{"day":64.29,"min":48.47,"max":68.86,"night":55.63,"eve":61.97,"morn":48.47},"feels_like":{"day":57.94,"night":54.21,"eve":59.38,"morn":42.67},"pressure":1027,"humidity":38,"dew_point":38.61,"wind_speed":6.73,"wind_deg":294,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":4.15},{"dt":1611248400,"sunrise":1611231739,"sunset":1611269603,"temp":{"day":69.3,"min":52.3,"max":69.3,"night":62.91,"eve":64.53,"morn":52.3},"feels_like":{"day":65.08,"night":56.73,"eve":60.82,"morn":49.95},"pressure":1020,"humidity":50,"dew_point":49.93,"wind_speed":7.56,"wind_deg":250,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"clouds":40,"pop":0.06,"uvi":2.72},{"dt":1611334800,"sunrise":1611318119,"sunset":1611356056,"temp":{"day":66.63,"min":60.98,"max":66.63,"night":60.98,"eve":64.02,"morn":62.28},"feels_like":{"day":65.26,"night":59.5,"eve":65.52,"morn":59.41},"pressure":1016,"humidity":76,"dew_point":59.05,"wind_speed":7.47,"wind_deg":249,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":99,"pop":0.68,"rain":3.07,"uvi":0.47},{"dt":1611421200,"sunrise":1611404497,"sunset":1611442510,"temp":{"day":63.46,"min":53.31,"max":63.46,"night":55.53,"eve":55.81,"morn":53.31},"feels_like":{"day":56.79,"night":49.55,"eve":49.03,"morn":49.6},"pressure":1022,"humidity":58,"dew_point":48.76,"wind_speed":11.25,"wind_deg":52,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":23,"pop":0.72,"uvi":1},{"dt":1611507600,"sunrise":1611490874,"sunset":1611528963,"temp":{"day":67.1,"min":54.55,"max":67.1,"night":60.78,"eve":61.5,"morn":54.63},"feels_like":{"day":61,"night":57.87,"eve":58.24,"morn":51.21},"pressure":1023,"humidity":54,"dew_point":50.18,"wind_speed":10.92,"wind_deg":114,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"clouds":43,"pop":0,"uvi":1},{"dt":1611594000,"sunrise":1611577250,"sunset":1611615416,"temp":{"day":73.31,"min":58.62,"max":73.31,"night":67.05,"eve":68,"morn":58.8},"feels_like":{"day":70.65,"night":65.77,"eve":68.65,"morn":56.66},"pressure":1016,"humidity":58,"dew_point":57.72,"wind_speed":9.04,"wind_deg":198,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":79,"pop":0.3,"rain":0.32,"uvi":1}],"alerts":[{"sender_name":"NWS
+        Jacksonville (Northeast Florida and Southeast Georgia)","event":"Freeze Warning","start":1611039600,"end":1611064800,"description":"...FREEZE
+        WARNING REMAINS IN EFFECT FROM 2 AM TO 9 AM EST\nTUESDAY...\n* WHAT...Sub-freezing
+        temperatures as low as 30 expected.\n* WHERE...Inland Nassau, Inland Duval,
+        Bradford, Clay, Eastern\nAlachua, Western Alachua and Western Marion Counties.\n*
+        WHEN...From 2 AM to 9 AM EST Tuesday.\n* IMPACTS...Frost and freeze conditions
+        could kill crops and\nother sensitive vegetation."}]}'
+  recorded_at: Tue, 19 Jan 2021 02:52:09 GMT
+recorded_with: VCR 6.0.0
