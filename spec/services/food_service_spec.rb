@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe MapService, :vcr do
+RSpec.describe MunchiesService, :vcr do
   it 'can make a successful faraday call to yelp' do
     destination = 'Pueblo'
     term = 'chinese'
