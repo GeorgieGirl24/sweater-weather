@@ -5,16 +5,18 @@ class Roadtrip
               :weather_at_eta
 
   def initialize(data, origin, destination, weather)
+    # binding.pry
     @start_city = origin
     @end_city = destination
-    if !@travel_time.nil?
+    if data[:info][:statuscode] == 402
       @travel_time = 'impossible route'
+      @weather_at_eta = 'no data available'
     else
       @travel_time = data[:route][:formattedTime]
+      @weather_at_eta = {
+        temperature: weather.temperature,
+        conditions: weather.conditions
+      }
     end
-    @weather_at_eta = {
-      temperature: weather.temperature,
-      conditions: weather.conditions
-    }
   end
 end
