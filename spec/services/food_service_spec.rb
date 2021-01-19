@@ -5,7 +5,7 @@ RSpec.describe MunchiesService, :vcr do
     destination = 'Pueblo'
     term = 'chinese'
 
-    munchies = MunchiesService.get_restaurant(destination, term)
+    munchies = MunchiesService.get_restaurants(destination, term)
 
     expect(munchies).to be_a Hash
     expect(munchies).to have_key(:businesses)
