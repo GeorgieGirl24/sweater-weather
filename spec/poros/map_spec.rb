@@ -30,7 +30,8 @@ RSpec.describe Map, :vcr do
     expect(map.status_code).to eq(400)
     expect(map.messages).to be_an Array
     expect(map.messages.first).to be_a String
-    expect(map.messages.first).to eq('Illegal argument from request: Insufficient info for location')
+    expected = 'Illegal argument from request: Insufficient info for location'
+    expect(map.messages.first).to eq(expected)
     expect(map.latitude).to be_nil
     expect(map.longitude).to be_nil
   end

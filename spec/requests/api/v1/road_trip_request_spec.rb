@@ -78,8 +78,9 @@ RSpec.describe 'Roadtrip Api', :vcr do
 
       expect(response).to_not be_successful
       expect(response.status).to be(404)
-      expect(response.content_type).to eq('text/plain')
-      expect(response.body).to eq('Missing/empty fields. Please try again')
+      expect(response.content_type).to eq('application/json')
+      error = "{\"body\":\"Missing/empty fields. Please try again\"}"
+      expect(response.body).to eq(error)
     end
 
     it 'cannot make successful road trip with missing api_key' do
@@ -107,8 +108,9 @@ RSpec.describe 'Roadtrip Api', :vcr do
 
       expect(response).to_not be_successful
       expect(response.status).to be(401)
-      expect(response.content_type).to eq('text/plain')
-      expect(response.body).to eq('Missing/incorrect API key. Please try again')
+      expect(response.content_type).to eq('application/json')
+      error = "{\"body\":\"Missing/empty fields. Please try again\"}"
+      expect(response.body).to eq(error)
     end
 
     it 'cannot make successful road trip with non-matching api_key' do
@@ -141,8 +143,9 @@ RSpec.describe 'Roadtrip Api', :vcr do
       expect(user.api_key).to_not eq(road_trip_params[:api_key])
       expect(response).to_not be_successful
       expect(response.status).to be(401)
-      expect(response.content_type).to eq('text/plain')
-      expect(response.body).to eq('Missing/incorrect API key. Please try again')
+      expect(response.content_type).to eq('application/json')
+      error = "{\"body\":\"Missing/empty fields. Please try again\"}"
+      expect(response.body).to eq(error)
     end
   end
 end
