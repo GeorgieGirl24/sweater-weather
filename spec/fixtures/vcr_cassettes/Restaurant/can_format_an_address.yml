@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?location=Pueblo&open_now=true&term=chinese
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer O1e1jAeUFmrRf9UngEwSHtZpj4PiyeGvZwoaH6T2I2k5Reb8qvZYtQ_W2EbfZ3xOguKJl6h3Z2DVG6eShDVQF0YrYHf9IAbXgpveimlfk0fKMn6nn3gDeqVdP_IFYHYx
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4991'
+      X-Zipkin-Id:
+      - bbda1f819569e68d
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-01-21T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-5b584d59bc-skcrp; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-113-152-uswest2aprod
+      X-Extlb:
+      - 10-69-113-152-uswest2aprod
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 20 Jan 2021 03:38:13 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8239-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"businesses": [{"id": "yZuUg1Tl-Lck0vQPjUjXmg", "alias": "jade-dragon-chinese-restaurant-colorado-springs",
+        "name": "Jade Dragon Chinese Restaurant", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/n2oKNFlAr9Dtone-OVYTKQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/jade-dragon-chinese-restaurant-colorado-springs?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 78, "categories": [{"alias": "chinese", "title": "Chinese"}],
+        "rating": 3.5, "coordinates": {"latitude": 38.889777, "longitude": -104.757967},
+        "transactions": ["pickup", "delivery"], "price": "$$", "location": {"address1":
+        "3958 N Academy Blvd", "address2": "", "address3": "", "city": "Colorado Springs",
+        "zip_code": "80917", "country": "US", "state": "CO", "display_address": ["3958
+        N Academy Blvd", "Colorado Springs, CO 80917"]}, "phone": "+17195974844",
+        "display_phone": "(719) 597-4844", "distance": 70721.30656608578}, {"id":
+        "KZ3Yrk1UMMXzi4u1PGc0MA", "alias": "roosters-house-of-ramen-colorado-springs",
+        "name": "Rooster''s House of Ramen", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/KqwEBNeFA39YqIzzfjWIAA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/roosters-house-of-ramen-colorado-springs?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 205, "categories": [{"alias": "ramen", "title": "Ramen"},
+        {"alias": "tradamerican", "title": "American (Traditional)"}, {"alias": "asianfusion",
+        "title": "Asian Fusion"}], "rating": 3.5, "coordinates": {"latitude": 38.839129952363,
+        "longitude": -104.822760075331}, "transactions": ["pickup", "delivery"], "price":
+        "$$", "location": {"address1": "323 N Tejon St", "address2": null, "address3":
+        "", "city": "Colorado Springs", "zip_code": "80903", "country": "US", "state":
+        "CO", "display_address": ["323 N Tejon St", "Colorado Springs, CO 80903"]},
+        "phone": "+17195783031", "display_phone": "(719) 578-3031", "distance": 66859.82130336459}],
+        "total": 2, "region": {"center": {"longitude": -104.5733642578125, "latitude":
+        38.27035217485165}}}'
+  recorded_at: Wed, 20 Jan 2021 03:38:13 GMT
+recorded_with: VCR 6.0.0
