@@ -60,10 +60,10 @@ RSpec.describe 'User API', :vcr do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
-      expect(response.content_type).to eq('text/plain')
+      expect(response.content_type).to eq('application/json')
 
       expect(response.body).to be_a String
-      expect(response.body).to eq("[:email, [\"can't be blank\"]]")
+      expect(response.body).to eq("{\"body\":[\"Email (can't be blank); \"]}")
       # this gets formatted so it looks nicer as an error
     end
 
@@ -83,10 +83,11 @@ RSpec.describe 'User API', :vcr do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
-      expect(response.content_type).to eq('text/plain')
+      expect(response.content_type).to eq('application/json')
 
       expect(response.body).to be_a String
-      expect(response.body).to eq("[:password_confirmation, [\"doesn't match Password\", \"doesn't match Password\"]]")
+      expected = "{\"body\":[\"Password_confirmation (doesn't match Password); \"]}"
+      expect(response.body).to eq(expected)
     end
 
     it 'cannot add a new User if the email is in use' do
@@ -122,10 +123,10 @@ RSpec.describe 'User API', :vcr do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
-      expect(response.content_type).to eq('text/plain')
+      expect(response.content_type).to eq('application/json')
 
       expect(response.body).to be_a String
-      expect(response.body).to eq("[:email, [\"has already been taken\"]]")
+      expect(response.body).to eq("{\"body\":[\"Email (has already been taken); \"]}")
     end
   end
 end
