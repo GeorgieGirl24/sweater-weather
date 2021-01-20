@@ -14,7 +14,7 @@ RSpec.describe 'Image API', :vcr do
       expect(response.content_type).to eq('application/json')
 
       image = JSON.parse(response.body, symbolize_names: true)[:data]
-# binding.pry
+
       expect(image).to be_a Hash
       expect(image).to have_key(:id)
       expect(image[:id]).to be_nil
