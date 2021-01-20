@@ -38,7 +38,15 @@ bundle install
 rake db:{create,migrate}
 figaro install
 ```
-2. Please make sure that after `application.yml` is created that you include the follwing keys:
+
+2. Retrieve API keys:
+
+* OpenWeatherMap  (Please use to [OpenWeather API documentation](https://openweathermap.org/api))
+* MapQuest (Please use to [MapQuest API documentation](https://developer.mapquest.com/documentation/directions-api/route/get/))
+* Unsplash (Please use to [Unsplash API documentation](https://unsplash.com/documentation))
+* Yelp (Please use to [Yelp API documentation](https://www.yelp.com/developers/documentation/v3/business_search))
+
+3. Please make sure that after `application.yml` is created that you include the follwing keys:
 
 ```
 WEATHER_API_KEY: <Your API Key>
@@ -50,15 +58,17 @@ WEATHER_API_HOST: 'http://api.openweathermap.org'
 MAP_API_HOST: 'http://www.mapquestapi.com'
 IMAGE_API_HOST: 'https://api.unsplash.com'
 ```
-3. Open a new tab in the terminal and run:
+4. Open a new tab in the terminal and run:
 
 `rails s`
 
-4. In a web browser, navigate to `http://localhost:3000` to any of the `GET` routes in this repo
+5. In a web browser, navigate to `http://localhost:3000` to any of the `GET` routes in this repo
 
 ## Endpoints
 
-1. Retrieve weather for a City
+* All Endpoints are formatted to JSON guidelines 
+
+### 1. Retrieve weather for a City
 
 ```
 GET /api/v1/forecast?location=denver,co
@@ -66,12 +76,63 @@ Content-Type: application/json
 Accept: application/json
 ```
 
-This is an example of what a successful response:
+```
+{
+    "data": {
+        "id": null,
+        "type": "forecast",
+        "attributes": {
+            "current_weather": {
+                "datetime": "2021-01-20T00:28:40.000-07:00",
+                "sunrise": "2021-01-20T07:17:17.000-07:00",
+                "sunset": "2021-01-20T17:05:57.000-07:00",
+                "temperature": 26.55,
+                "feels_like": 17.26,
+                "humidity": 56,
+                "uvi": 0,
+                "visibility": 10000,
+                "conditions": "clear sky",
+                "icon": "01n"
+            },
+            "daily_weather": [
+                {
+                    "date": "2021-01-20",
+                    "sunrise": "2021-01-20T07:17:17.000-07:00",
+                    "sunset": "2021-01-20T17:05:57.000-07:00",
+                    "max_temp": 47.53,
+                    "min_temp": 26.55,
+                    "conditions": "clear sky",
+                    "icon": "01d"
+                },
+                {
+                    "date": "2021-01-21",
+                    "sunrise": "2021-01-21T07:16:42.000-07:00",
+                    "sunset": "2021-01-21T17:07:06.000-07:00",
+                    "max_temp": 43,
+                    "min_temp": 34.09,
+                    "conditions": "overcast clouds",
+                    "icon": "04d"
+                },...
+                
+            ],
+            "hourly_weather": [
+                {
+                    "time": "00:00:00",
+                    "temperature": 26.55,
+                    "wind_speed": "6.6 mph",
+                    "wind_direction": "from WSW",
+                    "conditions": "clear sky",
+                    "icon": "01n"
+                },...  
+            ]
+        }
+    }
+}
+```
+This is an example of a successfull response in Postman:
+* [Successful Forecast Response](https://i.imgur.com/bKVZXbr.png[/img])
 
-<a href="https://imgur.com/bKVZXbr"><img src="https://i.imgur.com/bKVZXbr.png" title="successful forecast example" /></a>
-
-
-2. Background Image of the City
+### 2. Background Image of the City
 
 ```
 GET /api/v1/backgrounds?location=denver,co
@@ -79,11 +140,38 @@ Content-Type: application/json
 Accept: application/json
 ```
 
-This is an example of a successfull response:
+```
+{
+    "data": {
+        "id": null,
+        "type": "image",
+        "attributes": {
+            "image": {
+                "image_url": "https://images.unsplash.com/photo-1519424187720-db6d0fc5a5d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxOTkxNTl8MHwxfHNlYXJjaHwxfHwlN0IlMjJsb2NhdGlvbiUyMj0lM0UlMjJkZW52ZXIsY28lMjIlN0R8ZW58MHx8fA&ixlib=rb-1.2.1&q=80&w=1080",
+                "link": "https://unsplash.com/photos/chaqHXlOzYs"
+            },
+            "credit": {
+                "source": "https://unsplash.com/",
+                "artist": "Owen Lystrup",
+                "artist_link": "https://unsplash.com/@owencavlys"
+            }
+        }
+    }
+}
+```
 
-<a href="https://imgur.com/4haxZs3"><img src="https://i.imgur.com/4haxZs3.png" title="source: imgur.com" /></a>
 
-3. User Registration
+This is an example of a successfull response in Postman:
+* [Successful Background Response](https://i.imgur.com/4haxZs3.png[/img])
+
+Some links to check out for unsuccessful responses:
+* [User Error: Email already exsists](https://i.imgur.com/PsWvwm9.png[/img])
+* [User Error: Email already exsists](https://i.imgur.com/PsWvwm9.png[/img])
+* [User Error: Passwords Dont Match](https://i.imgur.com/1r8WERC.png[/img])
+* [User Error: Email is left blank](https://i.imgur.com/3LVCkFv.png[/img])
+
+### 3. User Registration
+
 
 ```
 POST /api/v1/users
@@ -94,7 +182,7 @@ This is an example of a successfull response:
 
 <a href="https://imgur.com/pSQjiNg"><img src="https://i.imgur.com/pSQjiNg.png" title="successful user example" /></a>
 
-4. Login
+### 4. Login
 
 ```
 POST /api/v1/sessions
@@ -105,7 +193,10 @@ This is an example of a successfull response:
 
 <a href="https://imgur.com/lyeL3Sp"><img src="https://i.imgur.com/lyeL3Sp.png" title="successful sessions example" /></a>
 
-5. Roadtrip 
+Some links to check out for unsuccessful responses:
+* [Sessions Error: Bad creditials](https://i.imgur.com/p2THrjS.png[/img])
+
+### 5. Roadtrip 
 
 ```
 POST /api/v1/road_trip
@@ -116,35 +207,11 @@ This is an example of a successfull response:
 
 <a href="https://imgur.com/btPSuKW"><img src="https://i.imgur.com/btPSuKW.png" title="successful roadtrip example" /></a>
 
+Some links to checkout other responses:
+* [Really Long Roadtrip](https://i.imgur.com/xfLR3Rz.png[/img])
+* [Roadtrip Error: Impossible route](https://i.imgur.com/4haxZs3.png[/img])
 
 
-
-
-
-<a href="https://imgur.com/lyeL3Sp"><img src="https://i.imgur.com/lyeL3Sp.png" title="successful sessions example" /></a>
-
-
-
-
-
-<a href="https://imgur.com/PsWvwm9"><img src="https://i.imgur.com/PsWvwm9.png" title="ERROR exisisting email for user example " /></a>
-
-
-<a href="https://imgur.com/1r8WERC"><img src="https://i.imgur.com/1r8WERC.png" title="ERROR passwords dont match for user example" /></a>
-
-
-<a href="https://imgur.com/3LVCkFv"><img src="https://i.imgur.com/3LVCkFv.png" title="ERROR email is left blank" /></a>
-
-
-<a href="https://imgur.com/p2THrjS"><img src="https://i.imgur.com/p2THrjS.png" title="ERROR bad creditials for sessions example" /></a>
-
-
-<a href="https://imgur.com/xfLR3Rz"><img src="https://i.imgur.com/xfLR3Rz.png" title="Long roadtrip example" /></a>
-
-
-[Really Long Roadtri](https://i.imgur.com/xfLR3Rz.png[/img])
-
-[Roadtrip Error: Impossible route](https://i.imgur.com/4haxZs3.png[/img])
 ## Schema
 
 
