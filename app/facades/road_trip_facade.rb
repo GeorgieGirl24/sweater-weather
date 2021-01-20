@@ -23,7 +23,6 @@ class RoadTripFacade
   def self.get_eta_weather_time(trip, destination_weather)
     eta_weather_time = Time.now + (trip[:route][:realTime])
     self.select_destination_weather(eta_weather_time, destination_weather)
-    # binding.pry
   end
 
   def self.select_destination_weather(eta_weather_time, destination_weather)

@@ -109,7 +109,7 @@ RSpec.describe 'Roadtrip Api', :vcr do
       expect(response).to_not be_successful
       expect(response.status).to be(401)
       expect(response.content_type).to eq('application/json')
-      error = "{\"body\":\"Missing/empty fields. Please try again\"}"
+      error = "{\"body\":\"Missing/incorrect API key. Please try again\"}"
       expect(response.body).to eq(error)
     end
 
@@ -144,7 +144,7 @@ RSpec.describe 'Roadtrip Api', :vcr do
       expect(response).to_not be_successful
       expect(response.status).to be(401)
       expect(response.content_type).to eq('application/json')
-      error = "{\"body\":\"Missing/empty fields. Please try again\"}"
+      error = "{\"body\":\"Missing/incorrect API key. Please try again\"}"
       expect(response.body).to eq(error)
     end
   end
