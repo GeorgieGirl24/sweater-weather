@@ -70,6 +70,9 @@ IMAGE_API_HOST: 'https://api.unsplash.com'
 
 ### 1. Retrieve weather for a City
 
+This is an example of a successfull response in Postman:
+* [Successful Forecast Response](https://i.imgur.com/bKVZXbr.png[/img])
+
 ```
 GET /api/v1/forecast?location=denver,co
 Content-Type: application/json
@@ -129,10 +132,13 @@ Accept: application/json
     }
 }
 ```
-This is an example of a successfull response in Postman:
-* [Successful Forecast Response](https://i.imgur.com/bKVZXbr.png[/img])
+
 
 ### 2. Background Image of the City
+
+This is an example of a successfull response in Postman:
+* [Successful Background Response](https://i.imgur.com/4haxZs3.png[/img])
+
 
 ```
 GET /api/v1/backgrounds?location=denver,co
@@ -161,16 +167,10 @@ Accept: application/json
 ```
 
 
-This is an example of a successfull response in Postman:
-* [Successful Background Response](https://i.imgur.com/4haxZs3.png[/img])
-
-Some links to check out for unsuccessful responses:
-* [User Error: Email already exsists](https://i.imgur.com/PsWvwm9.png[/img])
-* [User Error: Email already exsists](https://i.imgur.com/PsWvwm9.png[/img])
-* [User Error: Passwords Dont Match](https://i.imgur.com/1r8WERC.png[/img])
-* [User Error: Email is left blank](https://i.imgur.com/3LVCkFv.png[/img])
-
 ### 3. User Registration
+
+This is an example of a successfull response in Postman:
+* [Successful Registration Response](https://i.imgur.com/pSQjiNg.png[/img])
 
 
 ```
@@ -178,34 +178,115 @@ POST /api/v1/users
 Content-Type: application/json
 Accept: application/json
 ```
-This is an example of a successfull response:
 
-<a href="https://imgur.com/pSQjiNg"><img src="https://i.imgur.com/pSQjiNg.png" title="successful user example" /></a>
+```
+JSON request body
+
+{
+  "email": "whatever7@example.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+```
+
+```
+{
+    "data": {
+        "id": "6",
+        "type": "users",
+        "attributes": {
+            "email": "whatever7@example.com",
+            "api_key": "3uqJRZzgHKutjOmYBiKWLwtt"
+        }
+    }
+}
+```
+
+
+Some links to check out for unsuccessful responses:
+* [User Error: Email already exsists](https://i.imgur.com/PsWvwm9.png[/img])
+* [User Error: Email already exsists](https://i.imgur.com/PsWvwm9.png[/img])
+* [User Error: Passwords Dont Match](https://i.imgur.com/1r8WERC.png[/img])
+* [User Error: Email is left blank](https://i.imgur.com/3LVCkFv.png[/img])
+
 
 ### 4. Login
+
+This is an example of a successfull response in Postman:
+* [Successful Login Response](https://i.imgur.com/lyeL3Sp.png[/img])
+
 
 ```
 POST /api/v1/sessions
 Content-Type: application/json
 Accept: application/json
 ```
-This is an example of a successfull response:
 
-<a href="https://imgur.com/lyeL3Sp"><img src="https://i.imgur.com/lyeL3Sp.png" title="successful sessions example" /></a>
+```
+JSON request body
+
+{
+  "email": "whatever@example.com",
+  "password": "password"
+}
+```
+
+```
+{
+    "data": {
+        "id": "2",
+        "type": "users",
+        "attributes": {
+            "email": "whatever@example.com",
+            "api_key": "slDxY2LlnLsKTI85VJdJ4Att"
+        }
+    }
+}
+```
 
 Some links to check out for unsuccessful responses:
 * [Sessions Error: Bad creditials](https://i.imgur.com/p2THrjS.png[/img])
 
 ### 5. Roadtrip 
 
+This is an example of a successfull response in Postman:
+* [Successful Roadtrip Response](https://i.imgur.com/btPSuKW.png[/img])
+
+
 ```
 POST /api/v1/road_trip
 Content-Type: application/json
 Accept: application/json
 ```
-This is an example of a successfull response:
 
-<a href="https://imgur.com/btPSuKW"><img src="https://i.imgur.com/btPSuKW.png" title="successful roadtrip example" /></a>
+```
+JSON request body
+
+{
+  "origin": "Denver,CO",
+  "destination": "Pueblo,CO",
+  "api_key": "GTWzPl3kxUSBxaCRqiCTOQtt"
+}
+```
+
+
+```
+{
+    "data": {
+        "id": null,
+        "type": "roadtrip",
+        "attributes": {
+            "start_city": "Denver,CO",
+            "end_city": "Pueblo,CO",
+            "travel_time": "01:44:22",
+            "weather_at_eta": {
+                "temperature": 36.95,
+                "conditions": "light rain"
+            }
+        }
+    }
+}
+```
 
 Some links to checkout other responses:
 * [Really Long Roadtrip](https://i.imgur.com/xfLR3Rz.png[/img])
