@@ -4,14 +4,14 @@ class Api::V1::SessionsController < ApplicationController
     if user && user.authenticate(sessions_params[:password])
       render json: UsersSerializer.new(user), status: 200
     else
-      render body: generate_error, status: 404
+      render json: { body: generate_error }, status: 404
     end
   end
 
   private
 
   def generate_error
-    error = 'Invaild creditials. Please try again'
+    'Invaild creditials. Please try again'
   end
 
   def sessions_params
