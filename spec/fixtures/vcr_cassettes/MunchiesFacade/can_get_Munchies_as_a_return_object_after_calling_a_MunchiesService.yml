@@ -1,0 +1,272 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?location=Pueblo&open_now=true&term
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer O1e1jAeUFmrRf9UngEwSHtZpj4PiyeGvZwoaH6T2I2k5Reb8qvZYtQ_W2EbfZ3xOguKJl6h3Z2DVG6eShDVQF0YrYHf9IAbXgpveimlfk0fKMn6nn3gDeqVdP_IFYHYx
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4996'
+      X-Zipkin-Id:
+      - 03e7b8de9b8e4f51
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-01-21T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-5b584d59bc-pbzvp; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-128-115-uswest2bprod
+      X-Extlb:
+      - 10-69-128-115-uswest2bprod
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 20 Jan 2021 02:47:59 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8261-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"businesses": [{"id": "ohD11-Q1y0Y3tNy0LjyTqw", "alias": "la-forchetta-da-massi-pueblo",
+        "name": "La Forchetta Da Massi", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ZHuEgQrbjTkf_TX6VT_hmw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/la-forchetta-da-massi-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 140, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "wine_bars", "title": "Wine Bars"}], "rating": 4.5, "coordinates":
+        {"latitude": 38.2645118031982, "longitude": -104.613206125796}, "transactions":
+        ["delivery"], "price": "$$", "location": {"address1": "126 S Union Ave", "address2":
+        "", "address3": null, "city": "Pueblo", "zip_code": "81003", "country": "US",
+        "state": "CO", "display_address": ["126 S Union Ave", "Pueblo, CO 81003"]},
+        "phone": "+17192530126", "display_phone": "(719) 253-0126", "distance": 3538.389354175468},
+        {"id": "S_sW4cZsXUC60GUrtIHe3A", "alias": "shamrock-brewing-pueblo", "name":
+        "Shamrock Brewing", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/ZwZFj0uUcYJATEUaC0E5Bg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/shamrock-brewing-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 345, "categories": [{"alias": "irish", "title": "Irish"},
+        {"alias": "irish_pubs", "title": "Irish Pub"}, {"alias": "brewpubs", "title":
+        "Brewpubs"}], "rating": 4.0, "coordinates": {"latitude": 38.2695003, "longitude":
+        -104.6077592}, "transactions": ["delivery"], "price": "$$", "location": {"address1":
+        "108 W 3rd St", "address2": "", "address3": "", "city": "Pueblo", "zip_code":
+        "81003", "country": "US", "state": "CO", "display_address": ["108 W 3rd St",
+        "Pueblo, CO 81003"]}, "phone": "+17195429974", "display_phone": "(719) 542-9974",
+        "distance": 3004.145195380956}, {"id": "TJTZuf8hdm2SpqrCKV5n9A", "alias":
+        "brues-alehouse-pueblo-3", "name": "Brues Alehouse", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Dd1cNms4g4u5g9d5FPmKdw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/brues-alehouse-pueblo-3?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 391, "categories": [{"alias": "breweries", "title": "Breweries"},
+        {"alias": "tradamerican", "title": "American (Traditional)"}], "rating": 4.0,
+        "coordinates": {"latitude": 38.2654120794923, "longitude": -104.609714939094},
+        "transactions": ["delivery"], "price": "$$", "location": {"address1": "120
+        Riverwalk Pl", "address2": "", "address3": "", "city": "Pueblo", "zip_code":
+        "81003", "country": "US", "state": "CO", "display_address": ["120 Riverwalk
+        Pl", "Pueblo, CO 81003"]}, "phone": "+17199249670", "display_phone": "(719)
+        924-9670", "distance": 3220.6660506639014}, {"id": "e8n3BpM-P0zGGRQoFM19nw",
+        "alias": "mr-tandoori-urban-bar-and-grill-pueblo", "name": "Mr Tandoori Urban
+        Bar & Grill", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/oIKopv1H-XGfEF6NRp9F5g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/mr-tandoori-urban-bar-and-grill-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 191, "categories": [{"alias": "indpak", "title": "Indian"},
+        {"alias": "wine_bars", "title": "Wine Bars"}], "rating": 4.5, "coordinates":
+        {"latitude": 38.2634163, "longitude": -104.6164076}, "transactions": ["delivery"],
+        "price": "$$", "location": {"address1": "310 S Victoria Ave", "address2":
+        "", "address3": "", "city": "Pueblo", "zip_code": "81003", "country": "US",
+        "state": "CO", "display_address": ["310 S Victoria Ave", "Pueblo, CO 81003"]},
+        "phone": "+17195443000", "display_phone": "(719) 544-3000", "distance": 3815.35332068561},
+        {"id": "bsSaMbB8acH6fUNkU-berQ", "alias": "grind-ha\u00fcs-cafe-pueblo", "name":
+        "Grind Ha\u00fcs Cafe", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/niwsRSm-5Ndr8h3Pay2slg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/grind-ha%C3%BCs-cafe-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 205, "categories": [{"alias": "coffee", "title": "Coffee &
+        Tea"}, {"alias": "sandwiches", "title": "Sandwiches"}, {"alias": "breakfast_brunch",
+        "title": "Breakfast & Brunch"}], "rating": 4.0, "coordinates": {"latitude":
+        38.2640899, "longitude": -104.6141053}, "transactions": ["pickup", "delivery"],
+        "price": "$", "location": {"address1": "209 S Union Ave", "address2": "",
+        "address3": "", "city": "Pueblo", "zip_code": "81003", "country": "US", "state":
+        "CO", "display_address": ["209 S Union Ave", "Pueblo, CO 81003"]}, "phone":
+        "+17195618567", "display_phone": "(719) 561-8567", "distance": 3624.314902240056},
+        {"id": "1h96HrFfwgJzQR4jrOLWkQ", "alias": "twenty-one-steak-pueblo", "name":
+        "Twenty One Steak", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/OUGLvQddm25w_5y3dKrF6w/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/twenty-one-steak-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 68, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "steak", "title": "Steakhouses"}, {"alias": "wine_bars",
+        "title": "Wine Bars"}], "rating": 4.5, "coordinates": {"latitude": 38.2646669,
+        "longitude": -104.6119622}, "transactions": ["delivery"], "price": "$$$$",
+        "location": {"address1": "101 S Main St", "address2": "Ste 200", "address3":
+        null, "city": "Pueblo", "zip_code": "81003", "country": "US", "state": "CO",
+        "display_address": ["101 S Main St", "Ste 200", "Pueblo, CO 81003"]}, "phone":
+        "+17199311921", "display_phone": "(719) 931-1921", "distance": 3428.4691292776342},
+        {"id": "3JjKgJOKleRM_iqg2_XVGQ", "alias": "grays-coors-tavern-pueblo", "name":
+        "Gray''s Coors Tavern", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/uUGRrmberdBEXAnO0T49Hg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/grays-coors-tavern-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 125, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "tradamerican", "title": "American (Traditional)"}], "rating": 3.5, "coordinates":
+        {"latitude": 38.2708740234375, "longitude": -104.613922119141}, "transactions":
+        ["delivery"], "price": "$", "location": {"address1": "515 W 4th St", "address2":
+        "", "address3": "", "city": "Pueblo", "zip_code": "81003", "country": "US",
+        "state": "CO", "display_address": ["515 W 4th St", "Pueblo, CO 81003"]}, "phone":
+        "+17195440455", "display_phone": "(719) 544-0455", "distance": 3539.8510980550477},
+        {"id": "47uwM2nD7016OGuq7Nejgw", "alias": "east-coast-pizza-pueblo", "name":
+        "East Coast Pizza", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/09W3bfjwQbCOjfs9iprcng/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/east-coast-pizza-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 94, "categories": [{"alias": "pizza", "title": "Pizza"}],
+        "rating": 4.0, "coordinates": {"latitude": 38.3089282671407, "longitude":
+        -104.628635571119}, "transactions": ["pickup", "delivery"], "price": "$$",
+        "location": {"address1": "1638 W US Hwy 50", "address2": "", "address3": "",
+        "city": "Pueblo", "zip_code": "81008", "country": "US", "state": "CO", "display_address":
+        ["1638 W US Hwy 50", "Pueblo, CO 81008"]}, "phone": "+17195839000", "display_phone":
+        "(719) 583-9000", "distance": 6455.139817797433}, {"id": "3Edd-08gz7auXvqqM-4Dwg",
+        "alias": "vazquez-taco-shop-pueblo", "name": "Vazquez Taco Shop", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/lyudLzs92SPt-UFVDqd1rA/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/vazquez-taco-shop-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 33, "categories": [{"alias": "mexican", "title": "Mexican"}],
+        "rating": 4.5, "coordinates": {"latitude": 38.2707358, "longitude": -104.599503},
+        "transactions": ["delivery"], "price": "$", "location": {"address1": "604
+        E 4th St", "address2": null, "address3": null, "city": "Pueblo", "zip_code":
+        "81001", "country": "US", "state": "CO", "display_address": ["604 E 4th St",
+        "Pueblo, CO 81001"]}, "phone": "+17195462186", "display_phone": "(719) 546-2186",
+        "distance": 2284.522971886835}, {"id": "6o0kxtwuJkVePqcFrNOgmw", "alias":
+        "angelos-pizza-parlor-pueblo-4", "name": "Angelo''s Pizza Parlor", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/3l25WWuXxITXPp7D-3XjLw/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/angelos-pizza-parlor-pueblo-4?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 208, "categories": [{"alias": "pizza", "title": "Pizza"},
+        {"alias": "italian", "title": "Italian"}], "rating": 3.0, "coordinates": {"latitude":
+        38.265812, "longitude": -104.611277}, "transactions": ["pickup", "delivery"],
+        "price": "$$", "location": {"address1": "105 E Riverwalk", "address2": "",
+        "address3": "", "city": "Pueblo", "zip_code": "81003", "country": "US", "state":
+        "CO", "display_address": ["105 E Riverwalk", "Pueblo, CO 81003"]}, "phone":
+        "+17195448588", "display_phone": "(719) 544-8588", "distance": 3348.1167853682005},
+        {"id": "kQxM1xlaZfQmXpKaqMTNnw", "alias": "wonderful-bistro-pueblo", "name":
+        "Wonderful Bistro", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/EIPRzs68vSrQ_2tCf5pQNw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/wonderful-bistro-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 64, "categories": [{"alias": "chinese", "title": "Chinese"}],
+        "rating": 4.0, "coordinates": {"latitude": 38.319366, "longitude": -104.616623},
+        "transactions": ["delivery"], "price": "$$", "location": {"address1": "4602
+        N Elizabeth St", "address2": "Ste 120", "address3": "", "city": "Pueblo",
+        "zip_code": "81008", "country": "US", "state": "CO", "display_address": ["4602
+        N Elizabeth St", "Ste 120", "Pueblo, CO 81008"]}, "phone": "+17195440233",
+        "display_phone": "(719) 544-0233", "distance": 6632.28027227077}, {"id": "ieFJIYf9gCzSqEuuwXHRkg",
+        "alias": "pho-basil-pueblo", "name": "Pho Basil", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/42vmvQDh9ncGfFEshZ9oGg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/pho-basil-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 50, "categories": [{"alias": "vietnamese", "title": "Vietnamese"},
+        {"alias": "soup", "title": "Soup"}], "rating": 4.0, "coordinates": {"latitude":
+        38.297113, "longitude": -104.607567}, "transactions": ["delivery"], "price":
+        "$$", "location": {"address1": "132 W 29th St", "address2": "", "address3":
+        "", "city": "Pueblo", "zip_code": "81008", "country": "US", "state": "CO",
+        "display_address": ["132 W 29th St", "Pueblo, CO 81008"]}, "phone": "+17195420118",
+        "display_phone": "(719) 542-0118", "distance": 4215.047434063359}, {"id":
+        "00v_eq2dOtTQ2eYp1B76sA", "alias": "do-drop-inn-pueblo", "name": "Do Drop
+        Inn", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/9jk-PkuAC8EOPOgAcjkYGg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/do-drop-inn-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 65, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "tradamerican",
+        "title": "American (Traditional)"}], "rating": 3.5, "coordinates": {"latitude":
+        38.24584, "longitude": -104.60694}, "transactions": ["pickup", "delivery"],
+        "price": "$$", "location": {"address1": "1201 S Santa Fe Ave", "address2":
+        "", "address3": "", "city": "Pueblo", "zip_code": "81006", "country": "US",
+        "state": "CO", "display_address": ["1201 S Santa Fe Ave", "Pueblo, CO 81006"]},
+        "phone": "+17195420818", "display_phone": "(719) 542-0818", "distance": 4001.0265537700857},
+        {"id": "jtlaLkKZ9X0Suv_rj3sbpQ", "alias": "1129-spirits-and-eatery-pueblo-2",
+        "name": "1129 Spirits & Eatery", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/BI2sG2Np4DlU1ezDJV6uTg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/1129-spirits-and-eatery-pueblo-2?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 46, "categories": [{"alias": "tradamerican", "title": "American
+        (Traditional)"}, {"alias": "cocktailbars", "title": "Cocktail Bars"}], "rating":
+        4.0, "coordinates": {"latitude": 38.2650406613581, "longitude": -104.611464366317},
+        "transactions": ["pickup", "delivery"], "price": "$$", "location": {"address1":
+        "115 E Riverwalk", "address2": "", "address3": null, "city": "Pueblo", "zip_code":
+        "81003", "country": "US", "state": "CO", "display_address": ["115 E Riverwalk",
+        "Pueblo, CO 81003"]}, "phone": "+17194001129", "display_phone": "(719) 400-1129",
+        "distance": 3378.240281670129}, {"id": "z7ab4-MNyujVCGYalTsWbg", "alias":
+        "habaneros-mexican-restaurant-pueblo", "name": "Habanero''s Mexican Restaurant",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/a4qIKR_cI1UtfsRjaAjuzQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/habaneros-mexican-restaurant-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 47, "categories": [{"alias": "mexican", "title": "Mexican"}],
+        "rating": 4.0, "coordinates": {"latitude": 38.3193740844727, "longitude":
+        -104.616630554199}, "transactions": ["pickup", "delivery"], "price": "$",
+        "location": {"address1": "4602 N Elizabeth St", "address2": "", "address3":
+        "", "city": "Pueblo", "zip_code": "81008", "country": "US", "state": "CO",
+        "display_address": ["4602 N Elizabeth St", "Pueblo, CO 81008"]}, "phone":
+        "+17195426678", "display_phone": "(719) 542-6678", "distance": 6632.28027227077},
+        {"id": "C7-zN-vSl7M1mFDE2ZVV9g", "alias": "guss-place-pueblo", "name": "Gus''s
+        Place", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/qQ5QKAkpRk2uWXO7E2R14g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/guss-place-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 18, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "bars", "title": "Bars"}], "rating": 4.5, "coordinates": {"latitude":
+        38.24588, "longitude": -104.613}, "transactions": [], "price": "$", "location":
+        {"address1": "1201 Elm St", "address2": null, "address3": null, "city": "Pueblo",
+        "zip_code": "81004", "country": "US", "state": "CO", "display_address": ["1201
+        Elm St", "Pueblo, CO 81004"]}, "phone": "+17192258538", "display_phone": "(719)
+        225-8538", "distance": 4395.896736006183}, {"id": "Uu3um3ue-GRFMM4vARlDQA",
+        "alias": "jorges-sombrero-restaurant-and-lounge-pueblo", "name": "Jorge''s
+        Sombrero Restaurant and Lounge", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/_X8DAIke2WHYc9cEcXnLkQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/jorges-sombrero-restaurant-and-lounge-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 100, "categories": [{"alias": "mexican", "title": "Mexican"}],
+        "rating": 3.0, "coordinates": {"latitude": 38.24327, "longitude": -104.61521},
+        "transactions": [], "price": "$$", "location": {"address1": "1319 E Evans
+        Ave", "address2": "", "address3": "", "city": "Pueblo", "zip_code": "81004",
+        "country": "US", "state": "CO", "display_address": ["1319 E Evans Ave", "Pueblo,
+        CO 81004"]}, "phone": "+17195646486", "display_phone": "(719) 564-6486", "distance":
+        4734.245810431811}, {"id": "M4MwxQAA58B7ENV8ootI-w", "alias": "kans-kitchen-pueblo",
+        "name": "Kan''s Kitchen", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/RxBfJ3hjre51jCpXqNlfjA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/kans-kitchen-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 20, "categories": [{"alias": "chinese", "title": "Chinese"},
+        {"alias": "hotdogs", "title": "Fast Food"}], "rating": 4.5, "coordinates":
+        {"latitude": 38.2401504516602, "longitude": -104.643249511719}, "transactions":
+        ["delivery"], "price": "$", "location": {"address1": "1620 S Prairie Ave",
+        "address2": null, "address3": null, "city": "Pueblo", "zip_code": "81005",
+        "country": "US", "state": "CO", "display_address": ["1620 S Prairie Ave",
+        "Pueblo, CO 81005"]}, "phone": "+17195660209", "display_phone": "(719) 566-0209",
+        "distance": 6975.853345952662}, {"id": "TaK6bbzpQ8ZLLvVZ_iG6Fg", "alias":
+        "cracker-barrel-old-country-store-pueblo-2", "name": "Cracker Barrel Old Country
+        Store", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/NjhObms5pNtvwwCEI7-t9g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/cracker-barrel-old-country-store-pueblo-2?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 98, "categories": [{"alias": "southern", "title": "Southern"},
+        {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "tradamerican",
+        "title": "American (Traditional)"}], "rating": 3.0, "coordinates": {"latitude":
+        38.32296617, "longitude": -104.61683867}, "transactions": ["pickup", "delivery"],
+        "price": "$$", "location": {"address1": "4735 N Elizabeth St", "address2":
+        "", "address3": "", "city": "Pueblo", "zip_code": "81008", "country": "US",
+        "state": "CO", "display_address": ["4735 N Elizabeth St", "Pueblo, CO 81008"]},
+        "phone": "+17195950711", "display_phone": "(719) 595-0711", "distance": 6975.2931732784355},
+        {"id": "npmV1X_vjY50UpQbl27O5Q", "alias": "fritangas-mexican-restaurant-pueblo",
+        "name": "Fritangas Mexican Restaurant", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/2CIjjg9_IMg4rtMrqPpe4w/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/fritangas-mexican-restaurant-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 42, "categories": [{"alias": "mexican", "title": "Mexican"}],
+        "rating": 3.5, "coordinates": {"latitude": 38.29894, "longitude": -104.60793},
+        "transactions": ["pickup", "delivery"], "price": "$", "location": {"address1":
+        "2920 Hart Rd", "address2": null, "address3": null, "city": "Pueblo", "zip_code":
+        "81008", "country": "US", "state": "CO", "display_address": ["2920 Hart Rd",
+        "Pueblo, CO 81008"]}, "phone": "+17195466000", "display_phone": "(719) 546-6000",
+        "distance": 4376.708102133332}], "total": 135, "region": {"center": {"longitude":
+        -104.5733642578125, "latitude": 38.27035217485165}}}'
+  recorded_at: Wed, 20 Jan 2021 02:47:59 GMT
+recorded_with: VCR 6.0.0
