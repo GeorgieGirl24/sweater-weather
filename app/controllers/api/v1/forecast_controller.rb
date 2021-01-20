@@ -5,6 +5,7 @@ class Api::V1::ForecastController < ApplicationController
   end
 
   private
+
   def location_params
     params.permit(:location)
   end

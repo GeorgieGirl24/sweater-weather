@@ -3,14 +3,16 @@ require 'rails_helper'
 RSpec.describe DailyWeather, :vcr do
   it 'has attributes and exists' do
     location = 'denver, co'
-    map = MapFacade.get_coordinates(location)
-    forecast = WeatherService.get_weather(map)
+    map = MapService.get_coordinates(location)
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
+    forecast = WeatherService.get_weather(lat, lng)
     many_day_weather = forecast[:daily].map do |daily|
       DailyWeather.new(daily)
     end
 
     expect(many_day_weather.first).to be_a DailyWeather
-    expect(many_day_weather.first.date).to eq('2021-01-16 12:00:00.000000000 -0700')
+    expect(many_day_weather.first.date).to eq('2021-01-16')
     expect(many_day_weather.first.date).to_not eq(1_610_071_200)
     expect(many_day_weather.first.sunrise).to eq('2021-01-16 07:18:33.000000000 -0700')
     expect(many_day_weather.first.sunrise).to_not eq(1_610_056_347)

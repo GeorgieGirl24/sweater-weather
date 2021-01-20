@@ -57,7 +57,7 @@ RSpec.describe 'Forecast Controller', :vcr do
       expect(daily_weather.count).to eq(5)
       expect(daily_weather.first).to have_key(:date)
       expect(daily_weather.first[:date]).to be_a String
-      expect(daily_weather.first[:date]).to eq('2021-01-16T12:00:00.000-07:00')
+      expect(daily_weather.first[:date]).to eq('2021-01-16')
       expect(daily_weather.first).to have_key(:sunrise)
       expect(daily_weather.first[:sunrise]).to be_a String
       expect(daily_weather.first).to have_key(:sunset)

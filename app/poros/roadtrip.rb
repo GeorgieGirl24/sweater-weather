@@ -5,7 +5,6 @@ class Roadtrip
               :weather_at_eta
 
   def initialize(data, origin, destination, weather)
-    # binding.pry
     @start_city = origin
     @end_city = destination
     if data[:info][:statuscode] == 402

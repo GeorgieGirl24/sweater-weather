@@ -1,0 +1,181 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?location=Pueblo&open_now=true&term=chinese
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer O1e1jAeUFmrRf9UngEwSHtZpj4PiyeGvZwoaH6T2I2k5Reb8qvZYtQ_W2EbfZ3xOguKJl6h3Z2DVG6eShDVQF0YrYHf9IAbXgpveimlfk0fKMn6nn3gDeqVdP_IFYHYx
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4992'
+      X-Zipkin-Id:
+      - 4cc5776debd7c435
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-01-21T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-5b584d59bc-jhs9v; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-90-30-uswest2aprod
+      X-Extlb:
+      - 10-69-90-30-uswest2aprod
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 20 Jan 2021 03:26:16 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8221-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"businesses": [{"id": "kQxM1xlaZfQmXpKaqMTNnw", "alias": "wonderful-bistro-pueblo",
+        "name": "Wonderful Bistro", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/EIPRzs68vSrQ_2tCf5pQNw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/wonderful-bistro-pueblo?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 64, "categories": [{"alias": "chinese", "title": "Chinese"}],
+        "rating": 4.0, "coordinates": {"latitude": 38.319366, "longitude": -104.616623},
+        "transactions": ["delivery"], "price": "$$", "location": {"address1": "4602
+        N Elizabeth St", "address2": "Ste 120", "address3": "", "city": "Pueblo",
+        "zip_code": "81008", "country": "US", "state": "CO", "display_address": ["4602
+        N Elizabeth St", "Ste 120", "Pueblo, CO 81008"]}, "phone": "+17195440233",
+        "display_phone": "(719) 544-0233", "distance": 6632.28027227077}, {"id": "suOjPmH_LIlTsFcNzfyZyg",
+        "alias": "overseas-101-colorado-springs", "name": "Overseas 101", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/3hOS2nQ_cbmuz7VFFOy_mA/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/overseas-101-colorado-springs?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 200, "categories": [{"alias": "chinese", "title": "Chinese"}],
+        "rating": 4.0, "coordinates": {"latitude": 38.9054485, "longitude": -104.7784794},
+        "transactions": ["delivery"], "price": "$", "location": {"address1": "5166
+        N Academy Blvd N", "address2": "", "address3": "", "city": "Colorado Springs",
+        "zip_code": "80918", "country": "US", "state": "CO", "display_address": ["5166
+        N Academy Blvd N", "Colorado Springs, CO 80918"]}, "phone": "+17195349588",
+        "display_phone": "(719) 534-9588", "distance": 72770.04619379164}, {"id":
+        "dj4iD-auowFQcyS6l81Suw", "alias": "wu-hoos-asian-bistro-colorado-springs",
+        "name": "Wu Hoo''s Asian Bistro", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/9AjoXGhlgFpUsPAvxMMPyA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/wu-hoos-asian-bistro-colorado-springs?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 185, "categories": [{"alias": "asianfusion", "title": "Asian
+        Fusion"}, {"alias": "soup", "title": "Soup"}, {"alias": "chinese", "title":
+        "Chinese"}], "rating": 4.0, "coordinates": {"latitude": 38.8966494922981,
+        "longitude": -104.747891239822}, "transactions": ["pickup", "delivery"], "price":
+        "$", "location": {"address1": "4543 Austin Bluffs Pkwy", "address2": "", "address3":
+        null, "city": "Colorado Springs", "zip_code": "80918", "country": "US", "state":
+        "CO", "display_address": ["4543 Austin Bluffs Pkwy", "Colorado Springs, CO
+        80918"]}, "phone": "+17193398858", "display_phone": "(719) 339-8858", "distance":
+        71274.07506897353}, {"id": "B3QIkOO5RYFJoI7lt8l1dg", "alias": "china-gourmet-colorado-springs",
+        "name": "China Gourmet", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/s2fPcE_5u6Ep3pIdj03cpw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/china-gourmet-colorado-springs?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 49, "categories": [{"alias": "chinese", "title": "Chinese"}],
+        "rating": 3.5, "coordinates": {"latitude": 38.838831782341, "longitude": -104.748137667775},
+        "transactions": ["pickup", "delivery"], "price": "$", "location": {"address1":
+        "466 N Murray Blvd", "address2": "", "address3": "", "city": "Colorado Springs",
+        "zip_code": "80916", "country": "US", "state": "CO", "display_address": ["466
+        N Murray Blvd", "Colorado Springs, CO 80916"]}, "phone": "+17195911628", "display_phone":
+        "(719) 591-1628", "distance": 65029.927250350374}, {"id": "Ho9y4NfPvCy9VWB6BrCpVA",
+        "alias": "new-panda-ii-colorado-springs", "name": "New Panda II", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/x0oub8IaIoks5m-T7aODGQ/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/new-panda-ii-colorado-springs?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 90, "categories": [{"alias": "chinese", "title": "Chinese"},
+        {"alias": "japanese", "title": "Japanese"}], "rating": 3.5, "coordinates":
+        {"latitude": 38.85661, "longitude": -104.79382}, "transactions": ["pickup",
+        "delivery"], "price": "$$", "location": {"address1": "1625 N Union Blvd",
+        "address2": "", "address3": "", "city": "Colorado Springs", "zip_code": "80909",
+        "country": "US", "state": "CO", "display_address": ["1625 N Union Blvd", "Colorado
+        Springs, CO 80909"]}, "phone": "+17195748336", "display_phone": "(719) 574-8336",
+        "distance": 67942.42414791668}, {"id": "ubDnfqz9VgGV7b6YDrG10A", "alias":
+        "china-cottage-fountain", "name": "China Cottage", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/QwlEmqMYDW_FXdfxTwTShg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/china-cottage-fountain?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 39, "categories": [{"alias": "chinese", "title": "Chinese"}],
+        "rating": 3.0, "coordinates": {"latitude": 38.7326, "longitude": -104.727752},
+        "transactions": ["delivery"], "price": "$$", "location": {"address1": "7040
+        S US Highway 85-87", "address2": null, "address3": null, "city": "Fountain",
+        "zip_code": "80817", "country": "US", "state": "CO", "display_address": ["7040
+        S US Highway 85-87", "Fountain, CO 80817"]}, "phone": "+17193900377", "display_phone":
+        "(719) 390-0377", "distance": 53126.3271322705}, {"id": "yZuUg1Tl-Lck0vQPjUjXmg",
+        "alias": "jade-dragon-chinese-restaurant-colorado-springs", "name": "Jade
+        Dragon Chinese Restaurant", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/n2oKNFlAr9Dtone-OVYTKQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/jade-dragon-chinese-restaurant-colorado-springs?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 78, "categories": [{"alias": "chinese", "title": "Chinese"}],
+        "rating": 3.5, "coordinates": {"latitude": 38.889777, "longitude": -104.757967},
+        "transactions": ["pickup", "delivery"], "price": "$$", "location": {"address1":
+        "3958 N Academy Blvd", "address2": "", "address3": "", "city": "Colorado Springs",
+        "zip_code": "80917", "country": "US", "state": "CO", "display_address": ["3958
+        N Academy Blvd", "Colorado Springs, CO 80917"]}, "phone": "+17195974844",
+        "display_phone": "(719) 597-4844", "distance": 70721.30656608578}, {"id":
+        "YdikhcIKuKL02fp0m8O5hQ", "alias": "xiangs-kitchen-colorado-springs", "name":
+        "Xiang''s Kitchen", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/zbOgRCHIDQNI8xSwsoyE5A/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/xiangs-kitchen-colorado-springs?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 108, "categories": [{"alias": "chinese", "title": "Chinese"},
+        {"alias": "vietnamese", "title": "Vietnamese"}, {"alias": "thai", "title":
+        "Thai"}], "rating": 3.5, "coordinates": {"latitude": 38.870943945184, "longitude":
+        -104.716647039245}, "transactions": ["pickup", "delivery"], "price": "$$",
+        "location": {"address1": "5935 Constitution Ave", "address2": "", "address3":
+        "", "city": "Colorado Springs", "zip_code": "80915", "country": "US", "state":
+        "CO", "display_address": ["5935 Constitution Ave", "Colorado Springs, CO 80915"]},
+        "phone": "+17195738899", "display_phone": "(719) 573-8899", "distance": 67934.43398558507},
+        {"id": "GiO1vmSfUqlSiDbV8G3zDA", "alias": "china-town-restaurant-colorado-springs",
+        "name": "China Town Restaurant", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/wivwJxceigwoLop1wRsiGQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/china-town-restaurant-colorado-springs?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 94, "categories": [{"alias": "chinese", "title": "Chinese"}],
+        "rating": 3.5, "coordinates": {"latitude": 38.8286, "longitude": -104.82249},
+        "transactions": ["delivery"], "price": "$$", "location": {"address1": "326
+        S Nevada Ave", "address2": "", "address3": "", "city": "Colorado Springs",
+        "zip_code": "80903", "country": "US", "state": "CO", "display_address": ["326
+        S Nevada Ave", "Colorado Springs, CO 80903"]}, "phone": "+17196325151", "display_phone":
+        "(719) 632-5151", "distance": 65734.68233860709}, {"id": "KZ3Yrk1UMMXzi4u1PGc0MA",
+        "alias": "roosters-house-of-ramen-colorado-springs", "name": "Rooster''s House
+        of Ramen", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/KqwEBNeFA39YqIzzfjWIAA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/roosters-house-of-ramen-colorado-springs?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 205, "categories": [{"alias": "ramen", "title": "Ramen"},
+        {"alias": "tradamerican", "title": "American (Traditional)"}, {"alias": "asianfusion",
+        "title": "Asian Fusion"}], "rating": 3.5, "coordinates": {"latitude": 38.839129952363,
+        "longitude": -104.822760075331}, "transactions": ["pickup", "delivery"], "price":
+        "$$", "location": {"address1": "323 N Tejon St", "address2": null, "address3":
+        "", "city": "Colorado Springs", "zip_code": "80903", "country": "US", "state":
+        "CO", "display_address": ["323 N Tejon St", "Colorado Springs, CO 80903"]},
+        "phone": "+17195783031", "display_phone": "(719) 578-3031", "distance": 66859.82130336459},
+        {"id": "jh-jPSzhkLgGmZK7Hapo3Q", "alias": "panda-express-colorado-springs-2",
+        "name": "Panda Express", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/TZydEyL1Id63sMGa6r9VIA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/panda-express-colorado-springs-2?adjust_creative=tUVIupRtW2WGbzsc8ulTGw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=tUVIupRtW2WGbzsc8ulTGw",
+        "review_count": 35, "categories": [{"alias": "chinese", "title": "Chinese"},
+        {"alias": "hotdogs", "title": "Fast Food"}], "rating": 2.5, "coordinates":
+        {"latitude": 38.872444, "longitude": -104.717506}, "transactions": ["pickup",
+        "delivery"], "price": "$", "location": {"address1": "2850 New Center Point
+        Dr", "address2": "", "address3": "", "city": "Colorado Springs", "zip_code":
+        "80922", "country": "US", "state": "CO", "display_address": ["2850 New Center
+        Point Dr", "Colorado Springs, CO 80922"]}, "phone": "+17195743126", "display_phone":
+        "(719) 574-3126", "distance": 68112.83133927138}], "total": 11, "region":
+        {"center": {"longitude": -104.5733642578125, "latitude": 38.27035217485165}}}'
+  recorded_at: Wed, 20 Jan 2021 03:26:16 GMT
+recorded_with: VCR 6.0.0

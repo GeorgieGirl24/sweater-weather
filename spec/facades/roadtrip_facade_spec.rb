@@ -11,16 +11,30 @@ RSpec.describe 'RoadTrip Facade API', :vcr do
       destination: 'Pueblo,CO',
       api_key: user.api_key
     }
-
+    origin = road_trip_params[:origin]
+    destination = road_trip_params[:destination]
     roadtrip = RoadTripFacade.get_trip(road_trip_params)
     expect(roadtrip).to be_a Roadtrip
-    trip = MapFacade.get_trip(road_trip_params[:origin], road_trip_params[:destination])
+    # this is getting back a hash from MapService.get_trip_duration
+    trip = MapService.get_trip_duration(origin, destination)
+
     expect(trip).to be_a Hash
     expect(trip).to have_key(:route)
     expect(trip[:route]).to have_key(:realTime)
+
     destination_weather = RoadTripFacade.get_forecast_weather(road_trip_params[:destination])
-    expect(destination_weather).to be_an Array
-    expect(destination_weather.first).to be_an HourlyWeather
+    expect(destination_weather).to be_an Hash
+    expect(destination_weather).to have_key(:lat)
+    expect(destination_weather[:lat]).to be_a Float
+    expect(destination_weather).to have_key(:lon)
+    expect(destination_weather[:lon]).to be_a Float
+    expect(destination_weather).to have_key(:current)
+    expect(destination_weather[:current]).to be_a Hash
+    expect(destination_weather).to have_key(:hourly)
+    expect(destination_weather[:hourly]).to be_an Array
+    expect(destination_weather).to have_key(:daily)
+    expect(destination_weather[:daily]).to be_a Array
+
     weather_time = RoadTripFacade.get_eta_weather_time(trip, destination_weather)
     expect(weather_time).to be_a HourlyWeather
     expect(weather_time.conditions).to be_a String

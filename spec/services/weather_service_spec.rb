@@ -3,15 +3,17 @@ require 'rails_helper'
 RSpec.describe WeatherService, :vcr do
   it 'can make a successful faraday call to openweathermap' do
     location = 'denver, co'
-    map = MapFacade.get_coordinates(location)
+    map = MapService.get_coordinates(location)
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
 
-    forecast = WeatherService.get_weather(map)
+    forecast = WeatherService.get_weather(lat, lng)
 
     expect(forecast).to be_a Hash
     expect(forecast).to have_key(:lat)
-    expect(forecast[:lat]).to eq(map.latitude.round(4))
+    expect(forecast[:lat]).to eq(lat.round(4))
     expect(forecast).to have_key(:lon)
-    expect(forecast[:lon]).to eq(map.longitude.round(4))
+    expect(forecast[:lon]).to eq(lng.round(4))
 
     expect(forecast).to have_key(:current)
     expect(forecast[:current]).to be_a Hash
