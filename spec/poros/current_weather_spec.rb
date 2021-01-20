@@ -3,8 +3,11 @@ require 'rails_helper'
 RSpec.describe CurrentWeather, :vcr do
   it 'has attributes and exsists' do
     location = 'denver, co'
-    map = MapFacade.get_coordinates(location)
-    forecast = WeatherService.get_weather(map)
+    map = MapService.get_coordinates(location)
+    # binding.pry
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
+    forecast = WeatherService.get_weather(lat, lng)
     current_weather = CurrentWeather.new(forecast[:current])
 
     expect(current_weather).to be_a CurrentWeather
