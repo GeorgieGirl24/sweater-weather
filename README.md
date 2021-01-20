@@ -23,8 +23,7 @@
 
 ## What it does
 
-
-To view the other components of the application please visit the [Github Project Organization](https://github.com/sweater-weather).
+An API that drives the front-end Sweater Weather App. This application not only allows you plan a roadtrip to a city of your choosing, but also will get you up to date on the weather conditions of that city.
 
 ## How to Install Sweater Weather
 
