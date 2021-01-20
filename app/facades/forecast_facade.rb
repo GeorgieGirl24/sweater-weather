@@ -1,29 +1,35 @@
 class ForecastFacade
   def self.get_forecast(location)
-    map = MapFacade.get_coordinates(location)
+    map = self.get_coordinates(destination)
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
     self.get_weather(map)
   end
 
-  def self.get_weather(map)
-    weather = self.weather(map)
+  def self.get_weather(lat, lng)
+    weather = self.weather(lat, lng)
     current_weather = CurrentWeather.new(weather[:current])
     daily_weather = self.daily_weather(weather)
     hourly_weather = self.hourly_weather(weather)
     Forecast.new(current_weather, daily_weather, hourly_weather)
   end
 
+  def self.get_coordinates(location)
+    MapService.get_coordinates(location)
+  end
+
   def self.get_forecast_weather(destination)
-    map = MapFacade.get_coordinates(destination)
+    map = self.get_coordinates(destination)
     self.get_destination_weather(map)
   end
 
-  def self.get_destination_weather(map)
-    weather = self.weather(map)
+  def self.get_destination_weather(lat, lng)
+    weather = self.weather(lat, lng)
     self.get_many_hourly_weather(weather)
   end
 
-  def self.weather(map)
-    WeatherService.get_weather(map)
+  def self.weather(lat, lng)
+    WeatherService.get_weather(lat, lng)
   end
 
   def self.get_many_hourly_weather(weather)

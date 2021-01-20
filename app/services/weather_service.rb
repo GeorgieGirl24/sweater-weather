@@ -1,8 +1,11 @@
 class WeatherService
-  def self.get_weather(map)
+  def self.get_weather(lat, lon)
+    # binding.pry
     response = conn.get('/data/2.5/onecall') do |req|
-      req.params['lat'] = map.latitude
-      req.params['lon'] = map.longitude
+      req.params['lat'] = lat
+      # req.params['lat'] = map[:results][0][:locations][0][:latLng][:lat]
+      req.params['lon'] = lon
+      # req.params['lon'] = map[:results][0][:locations][0][:latLng][:lng]
       req.params['units'] = 'imperial'
     end
     parse_data(response)
