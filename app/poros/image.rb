@@ -4,6 +4,7 @@ class Image
 
   def initialize(image_data, location)
     @image = {
+      location: location,
       image_url: image_data[:urls][:regular],
       link: image_data[:links][:html],
     }
