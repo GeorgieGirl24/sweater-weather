@@ -11,7 +11,7 @@ class Api::V1::SessionsController < ApplicationController
   private
 
   def generate_error
-    'Invaild creditials. Please try again'
+    ['Invaild creditials. Please try again']
   end
 
   def sessions_params
