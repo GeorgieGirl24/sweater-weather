@@ -4,7 +4,7 @@ RSpec.describe CurrentWeather, :vcr do
   it 'has attributes and exsists' do
     location = 'denver, co'
     map = MapService.get_coordinates(location)
-    # binding.pry
+
     lat = map[:results][0][:locations][0][:latLng][:lat]
     lng = map[:results][0][:locations][0][:latLng][:lng]
     forecast = WeatherService.get_weather(lat, lng)

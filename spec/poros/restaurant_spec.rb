@@ -14,7 +14,8 @@ RSpec.describe Restaurant, :vcr do
     expect(restaurant.name).to_not eq('wonderful-bistro-pueblo')
     expect(restaurant.address).to be_a String
     expect(restaurant.address).to_not be_an Array
-    expect(restaurant.address).to eq('4602 N Elizabeth St Ste 120 Pueblo, CO 81008')
+    address = '4602 N Elizabeth St Ste 120 Pueblo, CO 81008'
+    expect(restaurant.address).to eq(address)
     expect(restaurant.address).to_not be_empty
   end
 end

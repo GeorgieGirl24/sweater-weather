@@ -27,13 +27,13 @@ RSpec.describe Munchie, :vcr do
     expect(munchies.forecast[:summary]).to eq('clear sky')
     expect(munchies.forecast).to have_key(:temperature)
     expect(munchies.forecast[:temperature]).to be_a Numeric
-    # expect(munchies.forecast[:temperature]).to eq(27.43)
     expect(munchies.restaurant).to be_a Hash
     expect(munchies.restaurant).to have_key(:name)
     expect(munchies.restaurant[:name]).to be_a String
     expect(munchies.restaurant[:name]).to eq('Wonderful Bistro')
     expect(munchies.restaurant).to have_key(:address)
     expect(munchies.restaurant[:address]).to be_a String
-    expect(munchies.restaurant[:address]).to eq('4602 N Elizabeth St Ste 120 Pueblo, CO 81008')
+    address = '4602 N Elizabeth St Ste 120 Pueblo, CO 81008'
+    expect(munchies.restaurant[:address]).to eq(address)
   end
 end
