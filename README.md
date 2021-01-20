@@ -42,7 +42,6 @@ figaro install
 * OpenWeatherMap  (Please use to [OpenWeather API documentation](https://openweathermap.org/api))
 * MapQuest (Please use to [MapQuest API documentation](https://developer.mapquest.com/documentation/directions-api/route/get/))
 * Unsplash (Please use to [Unsplash API documentation](https://unsplash.com/documentation))
-* Yelp (Please use to [Yelp API documentation](https://www.yelp.com/developers/documentation/v3/business_search))
 
 3. Please make sure that after `application.yml` is created that you include the follwing keys:
 
@@ -50,7 +49,6 @@ figaro install
 WEATHER_API_KEY: <Your API Key>
 IMAGE_API_KEY: <Your API Key>
 MAP_API_KEY: <Your API Key>
-YELP_API_KEY: <Your API Key>
 
 WEATHER_API_HOST: 'http://api.openweathermap.org'
 MAP_API_HOST: 'http://www.mapquestapi.com'
@@ -293,6 +291,7 @@ Some links to checkout other responses:
 
 ## Schema
 
+* Users is the only table in the database. It hold an email, password_digest, and api key 
 
 ## Dependencies
 
