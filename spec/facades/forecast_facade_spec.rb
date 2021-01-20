@@ -109,7 +109,7 @@ RSpec.describe ForecastFacade, :vcr do
     expect(daily_weather.first).to be_an DailyWeather
     expect(daily_weather.first.conditions).to be_a String
     expect(daily_weather.first.icon).to be_a String
-    expect(daily_weather.first.date).to be_a Time
+    expect(daily_weather.first.date).to be_a String
     expect(daily_weather.first.max_temp).to be_a Float
     expect(daily_weather.first.min_temp).to be_a Float
     expect(daily_weather.first.sunrise).to be_a Time

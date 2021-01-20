@@ -4,6 +4,10 @@ class Restaurant
 
   def initialize(data)
     @name = data[:businesses].first[:name]
-    @address = data[:businesses].first[:location][:display_address].first
+    @address = formatted_address(data)
+  end
+
+  def formatted_address(data)
+    data[:businesses].first[:location][:display_address].join(' ')
   end
 end

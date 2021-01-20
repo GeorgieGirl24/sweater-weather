@@ -1,9 +1,9 @@
 class ForecastFacade
   def self.get_forecast(location)
-    map = self.get_coordinates(destination)
+    map = self.get_coordinates(location)
     lat = map[:results][0][:locations][0][:latLng][:lat]
     lng = map[:results][0][:locations][0][:latLng][:lng]
-    self.get_weather(map)
+    self.get_weather(lat, lng)
   end
 
   def self.get_weather(lat, lng)
