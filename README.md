@@ -3,9 +3,8 @@
 ![](https://img.shields.io/badge/Ruby-2.5.3-orange)
 ![](https://img.shields.io/gem/v/fast_jsonapi)
 ![](https://img.shields.io/badge/GeorgieGirl24-Sweater--Weather-brightgreen)
-![](https://github.com/GeorgieGirl24/sweater-weather/stargazers)
 ![](https://img.shields.io/github/issues/GeorgieGirl24/sweater-weather)
-![](https://shields.io/endpoint)
+
 
 # Sweater Weather
 
