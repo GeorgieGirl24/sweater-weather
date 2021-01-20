@@ -68,9 +68,9 @@ RSpec.describe 'User API' do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
-      expect(response.content_type).to eq('text/plain')
+      expect(response.content_type).to eq('application/json')
       expect(response.body).to be_an String
-      expect(response.body).to eq('Invaild creditials. Please try again')
+      expect(response.body).to eq("{\"body\":[\"Invaild creditials. Please try again\"]}")
     end
 
     it 'can send error with login fail (non-matching passwords)' do
@@ -92,9 +92,9 @@ RSpec.describe 'User API' do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
-      expect(response.content_type).to eq('text/plain')
+      expect(response.content_type).to eq('application/json')
       expect(response.body).to be_an String
-      expect(response.body).to eq('Invaild creditials. Please try again')
+      expect(response.body).to eq("{\"body\":[\"Invaild creditials. Please try again\"]}")
     end
 
     it 'can send error with login fail (non-matching email)' do
@@ -116,9 +116,9 @@ RSpec.describe 'User API' do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
-      expect(response.content_type).to eq('text/plain')
+      expect(response.content_type).to eq('application/json')
       expect(response.body).to be_an String
-      expect(response.body).to eq('Invaild creditials. Please try again')
+      expect(response.body).to eq("{\"body\":[\"Invaild creditials. Please try again\"]}")
     end
   end
 end
