@@ -3,8 +3,10 @@ require 'rails_helper'
 RSpec.describe HourlyWeather, :vcr do
   before :each do
     location = 'denver, co'
-    map = MapFacade.get_coordinates(location)
-    forecast = WeatherService.get_weather(map)
+    map = MapService.get_coordinates(location)
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
+    forecast = WeatherService.get_weather(lat, lng)
     @many_hours_weather = forecast[:hourly].map do |hour|
       HourlyWeather.new(hour)
     end
