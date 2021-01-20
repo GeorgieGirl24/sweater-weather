@@ -34,7 +34,8 @@ RSpec.describe 'User API' do
       expect(sessions_response[:data]).to have_key(:attributes)
       expect(sessions_response[:data][:attributes]).to have_key(:email)
       expect(sessions_response[:data][:attributes][:email]).to be_a String
-      expect(sessions_response[:data][:attributes][:email]).to eq('example@email.com')
+      email = 'example@email.com'
+      expect(sessions_response[:data][:attributes][:email]).to eq(email)
       expect(sessions_response[:data][:attributes]).to have_key(:api_key)
       expect(sessions_response[:data][:attributes][:api_key]).to be_a String
       expect(sessions_response[:data][:attributes]).to_not have_key(:password)
@@ -70,7 +71,8 @@ RSpec.describe 'User API' do
       expect(response.status).to eq(404)
       expect(response.content_type).to eq('application/json')
       expect(response.body).to be_an String
-      expect(response.body).to eq("{\"body\":[\"Invaild creditials. Please try again\"]}")
+      error = "{\"body\":[\"Invaild creditials. Please try again\"]}"
+      expect(response.body).to eq(error)
     end
 
     it 'can send error with login fail (non-matching passwords)' do
@@ -94,7 +96,8 @@ RSpec.describe 'User API' do
       expect(response.status).to eq(404)
       expect(response.content_type).to eq('application/json')
       expect(response.body).to be_an String
-      expect(response.body).to eq("{\"body\":[\"Invaild creditials. Please try again\"]}")
+      error = "{\"body\":[\"Invaild creditials. Please try again\"]}"
+      expect(response.body).to eq(error)
     end
 
     it 'can send error with login fail (non-matching email)' do
@@ -118,7 +121,8 @@ RSpec.describe 'User API' do
       expect(response.status).to eq(404)
       expect(response.content_type).to eq('application/json')
       expect(response.body).to be_an String
-      expect(response.body).to eq("{\"body\":[\"Invaild creditials. Please try again\"]}")
+      error = "{\"body\":[\"Invaild creditials. Please try again\"]}"
+      expect(response.body).to eq(error)
     end
   end
 end
