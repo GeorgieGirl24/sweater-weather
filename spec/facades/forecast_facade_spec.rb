@@ -3,8 +3,11 @@ require 'rails_helper'
 RSpec.describe ForecastFacade, :vcr do
   it 'returns a Forcast object when called and give just a location' do
     location = 'denver, co'
-    map = MapFacade.get_coordinates(location)
-    forecast = ForecastFacade.get_weather(map)
+    map = MapService.get_coordinates(location)
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
+    # this is no longer an object but rather a Hash
+    forecast = ForecastFacade.get_weather(lat, lng)
     expect(forecast).to be_a Forecast
     expect(forecast.current_weather).to be_a CurrentWeather
     expect(forecast.current_weather.temperature).to be_a Float
@@ -19,8 +22,11 @@ RSpec.describe ForecastFacade, :vcr do
 
   it 'can return a HourlyWeather' do
     destination = 'Pueblo, CO'
-    map = MapFacade.get_coordinates(destination)
-    destination_weather = ForecastFacade.get_destination_weather(map)
+    map = MapService.get_coordinates(destination)
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
+
+    destination_weather = ForecastFacade.get_destination_weather(lat, lng)
 
     expect(destination_weather).to be_a Array
     expect(destination_weather.first).to be_a HourlyWeather
@@ -34,8 +40,10 @@ RSpec.describe ForecastFacade, :vcr do
 
   it 'can call weather for multiple service calls' do
     destination = 'Pueblo, CO'
-    map = MapFacade.get_coordinates(destination)
-    weather = WeatherService.get_weather(map)
+    map = MapService.get_coordinates(destination)
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
+    weather = WeatherService.get_weather(lat, lng)
 
     expect(weather).to be_a Hash
     expect(weather).to have_key(:lat)
@@ -52,8 +60,10 @@ RSpec.describe ForecastFacade, :vcr do
 
   it 'can get many HourlyWeather objects' do
     destination = 'Pueblo, CO'
-    map = MapFacade.get_coordinates(destination)
-    weather = WeatherService.get_weather(map)
+    map = MapService.get_coordinates(destination)
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
+    weather = WeatherService.get_weather(lat, lng)
 
     many_hourly_weather = ForecastFacade.get_many_hourly_weather(weather)
 
@@ -69,8 +79,10 @@ RSpec.describe ForecastFacade, :vcr do
 
   it 'can get eight HourlyWeather objects' do
     destination = 'Pueblo, CO'
-    map = MapFacade.get_coordinates(destination)
-    weather = WeatherService.get_weather(map)
+    map = MapService.get_coordinates(destination)
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
+    weather = WeatherService.get_weather(lat, lng)
 
     hourly_weather = ForecastFacade.hourly_weather(weather)
     expect(hourly_weather).to be_an Array
@@ -85,8 +97,10 @@ RSpec.describe ForecastFacade, :vcr do
 
   it 'can get DailyWeather objects' do
     destination = 'Pueblo, CO'
-    map = MapFacade.get_coordinates(destination)
-    weather = WeatherService.get_weather(map)
+    map = MapService.get_coordinates(destination)
+    lat = map[:results][0][:locations][0][:latLng][:lat]
+    lng = map[:results][0][:locations][0][:latLng][:lng]
+    weather = WeatherService.get_weather(lat, lng)
 
     daily_weather = ForecastFacade.daily_weather(weather)
 
