@@ -171,7 +171,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 30 Jan 2021 23:28:23 GMT
+      - Sat, 30 Jan 2021 23:30:55 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -179,11 +179,11 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=69A256732EDF24C716DC423B5E626A30; Path=/directions; HttpOnly
+      - JSESSIONID=187D1ECC3977388ED3FFB4AA89836EA3; Path=/directions; HttpOnly
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Sat, 30 Jan 2021 23:28:23 GMT
+      - Sat, 30 Jan 2021 23:30:55 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -201,5 +201,5 @@ http_interactions:
       string: '{"route":{"routeError":{"errorCode":2,"message":""}},"info":{"statuscode":402,"copyright":{"imageAltText":"©
         2021 MapQuest, Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","text":"©
         2021 MapQuest, Inc."},"messages":["We are unable to route with the given locations."]}}'
-  recorded_at: Sat, 30 Jan 2021 23:28:23 GMT
+  recorded_at: Sat, 30 Jan 2021 23:30:55 GMT
 recorded_with: VCR 6.0.0
