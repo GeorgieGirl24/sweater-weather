@@ -23,6 +23,7 @@ RSpec.describe Image, :vcr do
     expect(image.image[:link]).to eq('https://unsplash.com/photos/hdzGZRCYMSU')
     expect(image.credit[:source]).to eq('https://unsplash.com/')
     expect(image.credit[:artist]).to eq('Michael Kilcoyne')
-    expect(image.credit[:artist_link]).to eq('https://unsplash.com/@mikekilcoyne')
+    artist_link = 'https://unsplash.com/@mikekilcoyne'
+    expect(image.credit[:artist_link]).to eq(artist_link)
   end
 end

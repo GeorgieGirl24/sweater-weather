@@ -52,7 +52,8 @@ RSpec.describe 'Image API', :vcr do
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
       expect(response.content_type).to eq('application/json')
-      expect(response.body).to eq("{\"error\":\"Unable to find image without location\"}")
+      error = "{\"body\":[\"Unable to find image without location\"]}"
+      expect(response.body).to eq(error)
     end
   end
 end

@@ -43,7 +43,8 @@ RSpec.describe WeatherService, :vcr do
     expect(forecast[:current][:temp]).to eq(28.53)
     expect(forecast[:current][:feels_like]).to eq(18.75)
     expect(forecast[:current][:visibility]).to eq(10000)
-    expect(Time.at(forecast[:current][:sunset])).to eq('2021-01-16 17:00:41.000000000 -0700')
+    expected = '2021-01-16 17:00:41.000000000 -0700'
+    expect(Time.at(forecast[:current][:sunset])).to eq(expected)
     expect(Time.at(forecast[:current][:sunset])).to_not eq(1610841641)
     expect(forecast[:current][:weather][0][:description]).to eq('overcast clouds')
     expect(forecast[:current][:weather][0][:icon]).to eq('04n')

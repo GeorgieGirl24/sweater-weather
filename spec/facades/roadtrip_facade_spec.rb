@@ -15,14 +15,14 @@ RSpec.describe 'RoadTrip Facade API', :vcr do
     destination = road_trip_params[:destination]
     roadtrip = RoadTripFacade.get_trip(road_trip_params)
     expect(roadtrip).to be_a Roadtrip
-    # this is getting back a hash from MapService.get_trip_duration
+
     trip = MapService.get_trip_duration(origin, destination)
 
     expect(trip).to be_a Hash
     expect(trip).to have_key(:route)
     expect(trip[:route]).to have_key(:realTime)
 
-    destination_weather = RoadTripFacade.get_forecast_weather(road_trip_params[:destination])
+    destination_weather = RoadTripFacade.get_forecast_weather(destination)
     expect(destination_weather).to be_an Hash
     expect(destination_weather).to have_key(:lat)
     expect(destination_weather[:lat]).to be_a Float
@@ -46,11 +46,8 @@ RSpec.describe 'RoadTrip Facade API', :vcr do
     eta_weather_time = Time.now + (trip[:route][:realTime])
     select_destination_weather = RoadTripFacade.select_destination_weather(eta_weather_time, destination_weather)
     rounded_weather = RoadTripFacade.weather_rounding(eta_weather_time)
-
-    # expect(rounded_weather).to eq('2021-01-18 23:00:00 -0700')
-    # expect(rounded_weather).to_not eq('2021-01-18 23:28:00 -0700')
-    # expect(rounded_weather).to_not eq('2021-01-18 24:00:00 -0700')
   end
+
 
   it 'cannot find a trip time, if the route is impossible' do
     User.destroy_all
@@ -62,7 +59,9 @@ RSpec.describe 'RoadTrip Facade API', :vcr do
       destination: 'Stockholm, Sweden',
       api_key: user.api_key
     }
-    trip = MapFacade.get_trip(road_trip_params[:origin], road_trip_params[:destination])
+    origin = road_trip_params[:origin]
+    destination = road_trip_params[:destination]
+    trip = MapFacade.get_trip(origin, destination)
     expect(trip[:info][:statuscode]).to eq(402)
     roadtrip = RoadTripFacade.get_trip(road_trip_params)
 

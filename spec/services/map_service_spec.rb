@@ -15,10 +15,12 @@ RSpec.describe MapService, :vcr do
     expect(map[:results].first[:locations].first[:latLng]).to be_a Hash
     expect(map[:results].first[:locations].first[:latLng]).to have_key(:lat)
     expect(map[:results].first[:locations].first[:latLng][:lat]).to be_a Float
-    expect(map[:results].first[:locations].first[:latLng][:lat]).to eq(39.738453)
+    lat = 39.738453
+    expect(map[:results].first[:locations].first[:latLng][:lat]).to eq(lat)
     expect(map[:results].first[:locations].first[:latLng]).to have_key(:lng)
     expect(map[:results].first[:locations].first[:latLng][:lng]).to be_a Float
-    expect(map[:results].first[:locations].first[:latLng][:lng]).to eq(-104.984853)
+    lng = -104.984853
+    expect(map[:results].first[:locations].first[:latLng][:lng]).to eq(lng)
   end
 
   it 'can fail with an error, if there external call is not possible' do
@@ -32,6 +34,7 @@ RSpec.describe MapService, :vcr do
     expect(map[:info][:statuscode]).to eq(400)
     expect(map[:info]).to have_key(:messages)
     expect(map[:info][:messages]).to be_an Array
-    expect(map[:info][:messages].first).to eq('Illegal argument from request: Insufficient info for location')
+    expected = 'Illegal argument from request: Insufficient info for location'
+    expect(map[:info][:messages].first).to eq(expected)
   end
 end

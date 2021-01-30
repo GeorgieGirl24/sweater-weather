@@ -34,8 +34,8 @@ RSpec.describe 'User API', :vcr do
       expect(user_response[:data][:attributes][:email]).to be_a String
       expect(user_response[:data][:attributes]).to have_key(:api_key)
       expect(user_response[:data][:attributes][:api_key]).to be_a String
-
-      expect(user_response[:data][:attributes][:email]).to eq('example@email.com')
+      email = 'example@email.com'
+      expect(user_response[:data][:attributes][:email]).to eq(email)
 
       user = User.last
       expect(user).to be_a User
@@ -126,7 +126,8 @@ RSpec.describe 'User API', :vcr do
       expect(response.content_type).to eq('application/json')
 
       expect(response.body).to be_a String
-      expect(response.body).to eq("{\"body\":[\"Email (has already been taken); \"]}")
+      error = "{\"body\":[\"Email (has already been taken); \"]}"
+      expect(response.body).to eq(error)
     end
   end
 end

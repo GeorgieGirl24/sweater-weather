@@ -5,9 +5,9 @@ class Api::V1::RoadTripController < ApplicationController
       roadtrip = RoadTripFacade.get_trip(road_trip_params)
       render json: RoadtripSerializer.new(roadtrip)
     elsif find_empty_values(road_trip_params)
-      render body: generate_error, status: 404
+      render json: { body: generate_error }, status: 404
     elsif bad_api_key(road_trip_params, user)
-      render body: api_error, status: 401
+      render json: { body: api_error }, status: 401
     end
   end
 

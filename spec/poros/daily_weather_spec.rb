@@ -14,9 +14,11 @@ RSpec.describe DailyWeather, :vcr do
     expect(many_day_weather.first).to be_a DailyWeather
     expect(many_day_weather.first.date).to eq('2021-01-16')
     expect(many_day_weather.first.date).to_not eq(1_610_071_200)
-    expect(many_day_weather.first.sunrise).to eq('2021-01-16 07:18:33.000000000 -0700')
+    sunrise = '2021-01-16 07:18:33.000000000 -0700'
+    expect(many_day_weather.first.sunrise).to eq(sunrise)
     expect(many_day_weather.first.sunrise).to_not eq(1_610_056_347)
-    expect(many_day_weather.first.sunset).to eq('2021-01-16 17:00:41.000000000 -0700')
+    sunset = '2021-01-16 17:00:41.000000000 -0700'
+    expect(many_day_weather.first.sunset).to eq(sunset)
     expect(many_day_weather.first.sunset).to_not eq(1_610_092_098)
     expect(many_day_weather.first.max_temp).to eq(47.71)
     expect(many_day_weather.first.max_temp).to_not eq(274.74) #Kelvin

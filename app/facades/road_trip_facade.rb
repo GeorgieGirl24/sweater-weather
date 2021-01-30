@@ -2,7 +2,7 @@ class RoadTripFacade
   def self.get_trip(road_trip_params)
     origin = road_trip_params[:origin]
     destination = road_trip_params[:destination]
-    trip = MapService.get_trip_duration(origin, destination) 
+    trip = MapService.get_trip_duration(origin, destination)
     if trip[:info][:statuscode] != 402
       destination_weather = self.get_forecast_weather(destination)
       weather_time = self.get_eta_weather_time(trip, destination_weather)
