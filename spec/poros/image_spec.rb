@@ -18,12 +18,12 @@ RSpec.describe Image, :vcr do
     expect(image.credit[:artist]).to be_a String
     expect(image.credit).to have_key(:artist_link)
     expect(image.credit[:artist_link]).to be_a String
-    expected = 'https://images.unsplash.com/photo-1600041161228-519e6dd27bac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxOTkxNTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIsJTIwY298ZW58MHx8fA&ixlib=rb-1.2.1&q=80&w=1080'
+    expected = 'https://images.unsplash.com/photo-1580499518184-89bd0b1b061d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxOTkxNTl8MHwxfHNlYXJjaHwxfHxkZW52ZXIsJTIwY298ZW58MHx8fA&ixlib=rb-1.2.1&q=80&w=1080'
     expect(image.image[:image_url]).to eq(expected)
-    expect(image.image[:link]).to eq('https://unsplash.com/photos/hdzGZRCYMSU')
+    expect(image.image[:link]).to eq('https://unsplash.com/photos/s9DmLgLdugg')
     expect(image.credit[:source]).to eq('https://unsplash.com/')
-    expect(image.credit[:artist]).to eq('Michael Kilcoyne')
-    artist_link = 'https://unsplash.com/@mikekilcoyne'
+    expect(image.credit[:artist]).to eq('Jens Peter Olesen')
+    artist_link = 'https://unsplash.com/@jenspeter'
     expect(image.credit[:artist_link]).to eq(artist_link)
   end
 end

@@ -16,13 +16,13 @@ RSpec.describe HourlyWeather, :vcr do
     expect(@many_hours_weather).to be_an Array
     hour_weather = @many_hours_weather.first
     expect(hour_weather).to be_a HourlyWeather
-    expect(hour_weather.time).to eq('14:00:00')
+    expect(hour_weather.time).to eq('16:00:00')
     expect(hour_weather.time).to_not eq(1610830800) #unformatted
-    expect(hour_weather.temperature).to eq(46.27)
+    expect(hour_weather.temperature).to eq(47.77)
     expect(hour_weather.temperature).to_not eq(245.76) #Kelvin
-    expect(hour_weather.wind_speed).to eq('5.91 mph')
+    expect(hour_weather.wind_speed).to eq('10.56 mph')
     expect(hour_weather.wind_speed).to_not eq(5.91) #unformatted
-    expect(hour_weather.wind_direction).to eq('from E')
+    expect(hour_weather.wind_direction).to eq('from NW')
     expect(hour_weather.wind_direction).to_not eq(79) #unformatted
     expect(hour_weather.conditions).to eq('clear sky')
     expect(hour_weather.icon).to eq('01d')

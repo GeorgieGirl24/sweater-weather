@@ -2,56 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.mapquestapi.com/directions/v2/route?from=Denver,%20CO&key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&to=Daegu,%20South%20Korea&transportMode=AUTO
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v1.3.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Tue, 19 Jan 2021 03:06:27 GMT
-      Content-Type:
-      - application/json;charset=UTF-8
-      Content-Length:
-      - '278'
-      Server:
-      - Apache-Coyote/1.1
-      Set-Cookie:
-      - JSESSIONID=F35D4F560EDCE0EC9DF06706F7D48C05; Path=/directions; HttpOnly
-      Expires:
-      - Mon, 20 Dec 1998 01:00:00 GMT
-      Last-Modified:
-      - Tue, 19 Jan 2021 03:06:27 GMT
-      Cache-Control:
-      - no-cache, must-revalidate
-      Pragma:
-      - no-cache
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - OPTIONS,GET,POST
-      Status:
-      - success
-      Transactionweight:
-      - '1'
-    body:
-      encoding: UTF-8
-      string: '{"route":{"routeError":{"errorCode":2,"message":""}},"info":{"statuscode":402,"copyright":{"imageAltText":"©
-        2020 MapQuest, Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","text":"©
-        2020 MapQuest, Inc."},"messages":["We are unable to route with the given locations."]}}'
-  recorded_at: Tue, 19 Jan 2021 03:06:27 GMT
-- request:
-    method: get
     uri: http://www.mapquestapi.com/geocoding/v1/address?key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&location=Daegu,%20South%20Korea
     body:
       encoding: US-ASCII
@@ -202,4 +152,54 @@ http_interactions:
         clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":2},{"dt":1611630000,"sunrise":1611613820,"sunset":1611650735,"temp":{"day":49.42,"min":36.39,"max":49.42,"night":45.46,"eve":44.74,"morn":36.39},"feels_like":{"day":46.15,"night":43.25,"eve":42.21,"morn":32.14},"pressure":1024,"humidity":64,"dew_point":37.83,"wind_speed":1.14,"wind_deg":146,"weather":[{"id":501,"main":"Rain","description":"moderate
         rain","icon":"10d"}],"clouds":100,"pop":1,"rain":5.49,"uvi":2}]}'
   recorded_at: Tue, 19 Jan 2021 03:06:27 GMT
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/directions/v2/route?from=Denver,%20CO&key=D1W96vpjcjhrfUAs2j5VM72LizjADOc5&to=Daegu,%20South%20Korea&transportMode=AUTO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jan 2021 23:24:37 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '278'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=5B3BABC07BC97FE573FA08DB2DF3702B; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Sat, 30 Jan 2021 23:24:37 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: UTF-8
+      string: '{"route":{"routeError":{"errorCode":2,"message":""}},"info":{"statuscode":402,"copyright":{"imageAltText":"©
+        2021 MapQuest, Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","text":"©
+        2021 MapQuest, Inc."},"messages":["We are unable to route with the given locations."]}}'
+  recorded_at: Sat, 30 Jan 2021 23:24:37 GMT
 recorded_with: VCR 6.0.0
