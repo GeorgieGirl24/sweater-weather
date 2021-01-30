@@ -24,7 +24,7 @@ RSpec.describe Munchie, :vcr do
     expect(munchies.forecast).to be_a Hash
     expect(munchies.forecast).to have_key(:summary)
     expect(munchies.forecast[:summary]).to be_a String
-    expect(munchies.forecast[:summary]).to eq('clear sky')
+    expect(munchies.forecast[:summary]).to eq('broken clouds')
     expect(munchies.forecast).to have_key(:temperature)
     expect(munchies.forecast[:temperature]).to be_a Numeric
     expect(munchies.restaurant).to be_a Hash

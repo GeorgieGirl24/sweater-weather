@@ -40,14 +40,14 @@ RSpec.describe WeatherService, :vcr do
     expect(forecast[:current][:weather][0][:description]).to be_a String
     expect(forecast[:current][:weather][0]).to have_key(:icon)
     expect(forecast[:current][:weather][0][:icon]).to be_a String
-    expect(forecast[:current][:temp]).to eq(28.53)
-    expect(forecast[:current][:feels_like]).to eq(18.75)
+    expect(forecast[:current][:temp]).to eq(47.77)
+    expect(forecast[:current][:feels_like]).to eq(40.66)
     expect(forecast[:current][:visibility]).to eq(10000)
-    expected = '2021-01-16 17:00:41.000000000 -0700'
+    expected = '2021-01-30 17:17:02.000000000 -0700'
     expect(Time.at(forecast[:current][:sunset])).to eq(expected)
     expect(Time.at(forecast[:current][:sunset])).to_not eq(1610841641)
-    expect(forecast[:current][:weather][0][:description]).to eq('overcast clouds')
-    expect(forecast[:current][:weather][0][:icon]).to eq('04n')
+    expect(forecast[:current][:weather][0][:description]).to eq('clear sky')
+    expect(forecast[:current][:weather][0][:icon]).to eq('01d')
 
     expect(forecast).to have_key(:daily)
     expect(forecast[:daily]).to be_a Array
@@ -76,7 +76,7 @@ RSpec.describe WeatherService, :vcr do
     description = 'clear sky'
     expect(forecast[:daily].first[:weather].first[:description]).to eq(description)
     expect(forecast[:daily].first[:weather].first[:icon]).to eq('01d')
-    expect(forecast[:daily].first[:temp][:max]).to eq(44.33)
+    expect(forecast[:daily].first[:temp][:max]).to eq(47.77)
     expect(forecast[:daily].first[:temp][:max]).to_not eq(324.53)
 
     expect(forecast).to have_key(:hourly)
@@ -86,12 +86,12 @@ RSpec.describe WeatherService, :vcr do
     expect(Time.at(forecast[:hourly].first[:dt]).strftime('%Y-%m-%d')).to be_a String
     expect(forecast[:hourly].first).to have_key(:temp)
     expect(forecast[:hourly].first[:temp]).to be_a Float
-    expect(forecast[:hourly].first[:temp]).to eq(28.53)
+    expect(forecast[:hourly].first[:temp]).to eq(47.77)
     expect(forecast[:hourly].first).to have_key(:wind_speed)
     expect(forecast[:hourly].first[:wind_speed]).to be_a Float
     expect(forecast[:hourly].first).to have_key(:wind_deg)
     expect(forecast[:hourly].first[:wind_deg]).to be_an Integer
-    expect(forecast[:hourly].first[:wind_deg]).to eq(129)
+    expect(forecast[:hourly].first[:wind_deg]).to eq(323)
     expect(forecast[:hourly].first).to have_key(:weather)
     expect(forecast[:hourly].first[:weather]).to be_an Array
     expect(forecast[:hourly].first[:weather].first).to have_key(:description)

@@ -43,7 +43,7 @@ RSpec.describe MapFacade, :vcr do
     expect(trip_duration[:route][:boundingBox][:ul][:lat]).to eq(39.738453)
     expect(trip_duration[:route]).to have_key(:realTime)
     expect(trip_duration[:route][:realTime]).to be_an Integer
-    expect(trip_duration[:route][:realTime]).to eq(6643)
+    expect(trip_duration[:route][:realTime]).to eq(6516)
     expect(trip_duration[:route]).to have_key(:formattedTime)
     expect(trip_duration[:route][:formattedTime]).to be_an String
     expect(trip_duration[:route][:formattedTime]).to eq('01:44:22')
